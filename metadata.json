@@ -1,0 +1,6 @@
+{
+  "name": "VOICE AI HACK",
+  "description": "Motion-heavy, terminal-style hackathon landing page for VOICE AI HACK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
