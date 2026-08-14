@@ -1,9 +1,28 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { GlitchText } from "@/components/GlitchText";
 import { WaveformVisualizer } from "@/components/WaveformVisualizer";
-import { ArrowDown, ArrowUpRight, Cpu, Sparkles, Terminal, ShieldCheck, Zap } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
+  const [flicker, setFlicker] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlicker(true);
+      setTimeout(() => setFlicker(false), 120);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const asciiArt = `
+██╗   ██╗ ██████╗ ██╗ ██████╗███████╗     █████╗ ██╗    ██╗  ██╗ █████╗  ██████╗██╗  ██╗
+██║   ██║██╔═══██╗██║██╔════╝██╔════╝    ██╔══██╗██║    ██║  ██║██╔══██╗██╔════╝██║ ██╔╝
+██║   ██║██║   ██║██║██║     █████╗      ███████║██║    ███████║███████║██║     █████═╝ 
+╚██╗ ██╔╝██║   ██║██║██║     ██╔══╝      ██╔══██║██║    ██╔══██║██║  ██║██║     ██╔═██╗ 
+ ╚████╔╝ ╚██████╔╝██║╚██████╗███████╗    ██║  ██║██║    ██║  ██║██║  ██║╚██████╗██║  ██╗
+  ╚═══╝   ╚═════╝ ╚═╝ ╚═════╝╚══════╝    ╚═╝  ╚═╝╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+`;
+
   return (
     <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-24 overflow-hidden border-b border-neutral-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -19,31 +38,30 @@ export function HeroSection() {
           <span className="font-bold">// SYSTEM ALERT : HACKATHON ANNOUNCEMENT //</span>
         </motion.div>
 
-        {/* Main Event Name Headline */}
-        <div className="space-y-4 mb-6">
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black font-display tracking-tight text-white uppercase leading-none select-none"
+        {/* ASCII Art Wordmark Display in Header */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-6 overflow-x-auto text-center py-2"
+        >
+          <pre
+            className={`font-mono text-[6px] xs:text-[8px] sm:text-[10px] md:text-[12px] leading-tight text-white inline-block select-none transition-opacity duration-75 ${
+              flicker ? "opacity-40" : "opacity-100"
+            }`}
           >
-            <GlitchText text="VOICE AI HACK" scrambleOnMount={true} />
-          </motion.h1>
+            {asciiArt}
+          </pre>
 
           {/* Collaboration Sub-banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-neutral-300"
-          >
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-neutral-300">
             <span className="text-neutral-500">// COLLABORATION //</span>
             <span>In Collaboration with</span>
             <span className="border border-white/40 bg-white text-black px-2 py-0.5 font-bold tracking-wider">
               VOICE AI SPACE
             </span>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* Organizing Departments & College Info Grid */}
         <motion.div
@@ -114,3 +132,4 @@ export function HeroSection() {
     </section>
   );
 }
+
