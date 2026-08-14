@@ -1,8 +1,27 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Trophy, Award, Sparkles, Shield, Coins } from "lucide-react";
-import { CountUpNumber } from "@/components/CountUpNumber";
+import { Trophy } from "lucide-react";
 
 export function PrizeSection() {
+  const [flicker, setFlicker] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlicker(true);
+      setTimeout(() => setFlicker(false), 120);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const asciiPrize = `
+██████╗ ███████╗     ██╗    ██████╗  ██████╗     ██████╗  ██████╗  ██████╗ 
+██╔══██╗██╔════╝    ███║   ██╔═████╗██╔═████╗   ██╔═████╗██╔═████╗██╔═████╗
+██████╔╝███████╗    ╚██║   ██║██╔██║██║██╔██║   ██║██╔██║██║██╔██║██║██╔██║
+██╔══██╗╚════██║     ██║   ████╔╝██║████╔╝██║   ████╔╝██║████╔╝██║████╔╝██║
+██║  ██║███████║     ██║▄█╗╚██████╔╝╚██████╔╝▄█╗╚██████╔╝╚██████╔╝╚██████╔╝
+╚═╝  ╚═╝╚══════╝     ╚═╝╚═╝ ╚═════╝  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝  ╚═════╝ 
+`;
+
   return (
     <section id="prizes" className="py-16 sm:py-24 border-b border-neutral-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -39,7 +58,7 @@ export function PrizeSection() {
           <div className="absolute bottom-2 left-2 font-mono text-xs text-neutral-500">[STATUS: COMMITTED]</div>
           <div className="absolute bottom-2 right-2 font-mono text-xs text-neutral-500">[RVITM x VOICE AI SPACE]</div>
 
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+          <div className="relative z-10 max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center justify-center p-3 border border-neutral-700 bg-neutral-950 mb-2">
               <Trophy size={36} className="text-white" />
             </div>
@@ -48,13 +67,15 @@ export function PrizeSection() {
               TOTAL CUMULATIVE PRIZE POOL
             </div>
 
-            <div className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-display text-white tracking-tighter mono-text-glow leading-none py-2">
-              <CountUpNumber
-                end={100000}
-                duration={2000}
-                prefix="₹"
-                className="font-mono sm:font-display tracking-tight"
-              />
+            {/* ASCII Art Prize Render from prizemoney.md */}
+            <div className="overflow-x-auto py-3 text-center">
+              <pre
+                className={`font-mono text-[5px] xs:text-[7px] sm:text-[9px] md:text-[11px] leading-tight text-white inline-block select-none whitespace-pre transition-opacity duration-75 ${
+                  flicker ? "opacity-40" : "opacity-100"
+                }`}
+              >
+                {asciiPrize}
+              </pre>
             </div>
 
             <p className="text-sm sm:text-base font-mono text-neutral-300 max-w-lg mx-auto pt-2">
@@ -85,3 +106,4 @@ export function PrizeSection() {
     </section>
   );
 }
+

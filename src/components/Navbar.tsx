@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Terminal, ArrowUpRight, Menu, X, Radio } from "lucide-react";
+import { ArrowUpRight, Menu, X, Radio } from "lucide-react";
 import { motion, useScroll, useSpring } from "motion/react";
 
 export function Navbar() {
   const [currentTime, setCurrentTime] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -76,6 +77,7 @@ export function Navbar() {
 
           {/* Right Status & Register CTA */}
           <div className="flex items-center gap-3">
+            {/* UTC Clock */}
             <div className="hidden sm:flex items-center gap-2 text-neutral-400 border border-neutral-800 px-2.5 py-1">
               <Radio size={12} className="text-white animate-pulse" />
               <span className="text-[11px]">{currentTime || "SYS_READY"}</span>
@@ -120,7 +122,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-3 text-[11px] text-neutral-500">
-              SYS STATUS: ONLINE • PRIZE: ₹1,00,000
+              SYS STATUS: ONLINE • PRIZE: RS 1,00,000
             </div>
           </div>
         )}
@@ -128,3 +130,5 @@ export function Navbar() {
     </>
   );
 }
+
+
