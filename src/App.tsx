@@ -18,10 +18,12 @@ export default function App() {
       <DotPattern
         width={24}
         height={24}
-        cx={1}
-        cy={1}
-        cr={1}
+        cr={1.25}
         interactive={true}
+        gravityRadius={240}
+        maxPull={12}
+        stiffness={0.08}
+        damping={0.82}
       />
 
       {/* Subtle scanline CRT raster texture */}
