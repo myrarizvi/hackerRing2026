@@ -102,8 +102,8 @@ export function WaveformVisualizer({
       <div className="flex items-center justify-between border-b border-neutral-800 pb-2 mb-3 text-[11px] font-mono tracking-wider text-neutral-400">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-white animate-ping" />
-          <span className="text-white font-semibold tracking-widest">[VOICE_AUDIO_FREQ_SYNTH]</span>
-          <span className="hidden sm:inline text-neutral-500">// 44.1 kHz • PCM //</span>
+          <span className="text-white font-semibold tracking-widest">[REALTIME_VOICE_STREAM]</span>
+          <span className="hidden sm:inline text-neutral-500">// NEURAL_AUDIO_DSP //</span>
         </div>
         <div className="flex items-center gap-3">
           <button
