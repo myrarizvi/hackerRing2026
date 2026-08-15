@@ -40,20 +40,20 @@ export function SupportSection() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 border-b border-neutral-900 relative">
+    <section id="contact" className="py-16 sm:py-24 border-b border-[rgba(247,248,239,0.13)] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
           <div>
-            <div className="text-[11px] font-mono text-neutral-500 tracking-widest uppercase mb-1">
+            <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // COMM LINES //
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
               SUPPORT & CONTACT
             </h2>
           </div>
-          <div className="font-mono text-xs text-neutral-400">
+          <div className="font-mono text-xs text-[#c8cfbd]">
             [HELPDESK_OPERATIONAL]
           </div>
         </div>
@@ -70,40 +70,40 @@ export function SupportSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileHover={{ y: -3 }}
-                className="border border-neutral-800 bg-neutral-950/90 p-5 flex flex-col justify-between group hover:border-white transition-all duration-200"
+                className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-5 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 <div>
-                  <div className="flex items-center justify-between font-mono text-[11px] text-neutral-500 pb-2 mb-3 border-b border-neutral-900">
-                    <span className="flex items-center gap-1.5 text-white">
+                  <div className="flex items-center justify-between font-mono text-[11px] text-[#aab1a2] pb-2 mb-3 border-b border-[rgba(247,248,239,0.13)]">
+                    <span className="flex items-center gap-1.5 text-[#c7f85a] font-bold">
                       {isFaculty ? <GraduationCap size={14} /> : <User size={14} />}
                       <span>[{contact.role.toUpperCase()}_LEAD]</span>
                     </span>
-                    <span>0{idx + 1}</span>
+                    <span className="text-[#c8cfbd]">0{idx + 1}</span>
                   </div>
 
-                  <h3 className="font-mono font-bold text-base text-white group-hover:text-white mb-2">
+                  <h3 className="font-mono font-bold text-base text-[#f7f8ef] mb-2">
                     {contact.name}
                   </h3>
 
-                  <div className="font-mono text-lg font-bold text-neutral-200 tracking-wider mb-4">
+                  <div className="font-mono text-lg font-bold text-[#c8cfbd] tracking-wider mb-4">
                     +91 {contact.phone}
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-neutral-900 flex items-center gap-2">
+                <div className="pt-3 border-t border-[rgba(247,248,239,0.08)] flex items-center gap-2">
                   <a
                     href={`tel:+91${contact.phone}`}
-                    className="flex-1 border border-neutral-800 bg-black hover:border-white hover:text-white text-neutral-300 py-2 px-3 font-mono text-xs text-center flex items-center justify-center gap-1.5 transition-colors"
+                    className="flex-1 border border-[rgba(247,248,239,0.26)] bg-[#12140f] hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.45)] text-[#f7f8ef] py-2 px-3 font-mono text-xs text-center flex items-center justify-center gap-1.5 rounded-[6px] transition-colors"
                   >
-                    <PhoneCall size={12} />
+                    <PhoneCall size={12} className="text-[#c7f85a]" />
                     <span>CALL</span>
                   </a>
                   <button
                     onClick={() => handleCopy(contact.id, contact.phone)}
-                    className="border border-neutral-800 bg-black hover:border-white text-neutral-300 hover:text-white p-2 transition-colors cursor-pointer"
+                    className="border border-[rgba(247,248,239,0.26)] bg-[#12140f] hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.45)] text-[#f7f8ef] p-2 rounded-[6px] transition-colors cursor-pointer"
                     title="Copy phone number"
                   >
-                    {copiedId === contact.id ? <Check size={14} className="text-white" /> : <Copy size={14} />}
+                    {copiedId === contact.id ? <Check size={14} className="text-[#c7f85a]" /> : <Copy size={14} />}
                   </button>
                 </div>
               </motion.div>
@@ -112,12 +112,12 @@ export function SupportSection() {
         </div>
 
         {/* Support Helpdesk Notice */}
-        <div className="mt-8 p-4 border border-neutral-800 bg-neutral-950/40 flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-neutral-400 gap-3">
+        <div className="mt-8 p-4 border border-[rgba(247,248,239,0.13)] bg-[#12140f] rounded-[8px] flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-[#c8cfbd] gap-3">
           <div className="flex items-center gap-2">
-            <span className="text-white font-bold">&gt;</span>
+            <span className="text-[#c7f85a] font-bold">&gt;</span>
             <span>FOR QUERIES ON REGISTRATIONS, HARDWARE REQUISITIONS, OR ACCOMMODATION: REACH OUT DIRECTLY.</span>
           </div>
-          <span className="text-neutral-500 text-[10px]">[RESPONSE TIME: &lt; 2 HRS]</span>
+          <span className="text-[#aab1a2] text-[10px]">[RESPONSE TIME: &lt; 2 HRS]</span>
         </div>
 
       </div>

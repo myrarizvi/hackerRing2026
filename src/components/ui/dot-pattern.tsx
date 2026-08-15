@@ -188,19 +188,26 @@ export function DotPattern({
         dot.x += dot.vx;
         dot.y += dot.vy;
 
-        // Pure white dot rendering (no halos, no color tinting, no boundaries)
-        let opacity = 0.3; // Clean ambient white dot opacity
+        // Default warm off-white dot rendering (#f7f8ef)
+        let r = 247;
+        let g = 248;
+        let b = 239;
+        let opacity = 0.22; // Subtle ambient warm off-white dot opacity
         let currentRadius = cr;
 
         if (distFromMouse < gravityRadius) {
-          const factor = 1 - distFromMouse / gravityRadius;
-          opacity = 0.3 + factor * 0.7; // Brightens to 1.0 pure white near cursor
-          currentRadius = cr + factor * 1.5; // Smooth physical weight expansion
+          const factor = Math.pow(1 - distFromMouse / gravityRadius, 1.2);
+          // Smoothly convert color to PromptCompiler metallic lime (#c7f85a -> rgb(199, 248, 90))
+          r = Math.round(247 - (247 - 199) * factor);
+          g = 248;
+          b = Math.round(239 - (239 - 90) * factor);
+          opacity = 0.25 + factor * 0.75; // Brightens up to 1.0 at cursor center
+          currentRadius = cr + factor * 1.8; // Smooth weight expansion
         }
 
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, currentRadius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
         ctx.fill();
       }
 

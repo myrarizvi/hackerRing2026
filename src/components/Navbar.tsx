@@ -44,31 +44,31 @@ export function Navbar() {
     <>
       {/* Scroll Progress Bar at the absolute top */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-white z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-[#c7f85a] z-50 origin-left"
         style={{ scaleX }}
       />
 
-      <header className="fixed top-0 left-0 right-0 z-40 bg-black/90 backdrop-blur-md border-b border-neutral-800/80">
+      <header className="fixed top-0 left-0 right-0 z-40 nav-glass-panel">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between font-mono text-xs">
           {/* Brand / Terminal Identity */}
           <a
             href="#"
-            className="flex items-center gap-2 text-white font-bold tracking-widest hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-[#f7f8ef] font-bold tracking-widest hover:text-[#c7f85a] transition-colors"
           >
-            <div className="w-5 h-5 border border-white flex items-center justify-center bg-black">
-              <span className="w-2 h-2 bg-white block animate-pulse" />
+            <div className="w-5 h-5 border border-[rgba(247,248,239,0.26)] flex items-center justify-center bg-[#12140f] rounded-[4px]">
+              <span className="w-2 h-2 bg-[#c7f85a] block animate-pulse rounded-[1px]" />
             </div>
             <span className="text-sm tracking-tighter sm:tracking-widest">VOICE_AI_HACK</span>
-            <span className="hidden md:inline text-neutral-500 text-[10px]">// RVITM //</span>
+            <span className="hidden md:inline text-[#aab1a2] text-[10px]">// RVITM //</span>
           </a>
 
           {/* Center navigation */}
-          <nav className="hidden lg:flex items-center gap-6 text-neutral-400">
+          <nav className="hidden lg:flex items-center gap-6 text-[#aab1a2]">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-white transition-colors duration-150 relative py-1 hover:border-b hover:border-white"
+                className="hover:text-[#f7f8ef] transition-colors duration-150 relative py-1 hover:border-b hover:border-[#c7f85a]"
               >
                 [{link.label}]
               </a>
@@ -77,27 +77,24 @@ export function Navbar() {
 
           {/* Right Status & Register CTA */}
           <div className="flex items-center gap-3">
-            {/* UTC Clock */}
-            <div className="hidden sm:flex items-center gap-2 text-neutral-400 border border-neutral-800 px-2.5 py-1">
-              <Radio size={12} className="text-white animate-pulse" />
+            {/* UTC Clock / Status */}
+            <div className="hidden sm:flex items-center gap-2 text-[#c8cfbd] bg-[#12140f] border border-[rgba(247,248,239,0.13)] px-2.5 py-1 rounded-[6px]">
+              <Radio size={12} className="text-[#0f8c7f] animate-pulse" />
               <span className="text-[11px]">{currentTime || "SYS_READY"}</span>
             </div>
 
             <a
               href="#register"
-              className="relative group overflow-hidden border border-white bg-white text-black px-3.5 py-1.5 font-bold tracking-wider text-xs flex items-center gap-1.5 transition-all duration-200 hover:bg-black hover:text-white"
+              className="btn-primary px-3.5 py-1 text-xs tracking-wider flex items-center gap-1.5"
             >
-              <span className="relative z-10 flex items-center gap-1">
-                REGISTER NOW
-                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </span>
-              <span className="absolute inset-0 bg-neutral-800 -translate-x-full group-hover:translate-x-0 transition-transform duration-200" />
+              <span>REGISTER NOW</span>
+              <ArrowUpRight size={14} />
             </a>
 
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 border border-neutral-800 text-neutral-300 hover:text-white hover:border-white"
+              className="lg:hidden p-1.5 border border-[rgba(247,248,239,0.26)] bg-[#12140f] text-[#c8cfbd] hover:text-[#f7f8ef] hover:border-[rgba(247,248,239,0.45)] rounded-[6px]"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -107,8 +104,8 @@ export function Navbar() {
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-neutral-800 bg-black/98 px-6 py-5 font-mono text-sm space-y-3">
-            <div className="text-[11px] text-neutral-500 pb-2 border-b border-neutral-800">
+          <div className="lg:hidden border-t border-[rgba(247,248,239,0.13)] bg-[#12140f]/98 backdrop-blur-lg px-6 py-5 font-mono text-sm space-y-3 shadow-2xl">
+            <div className="text-[11px] text-[#aab1a2] pb-2 border-b border-[rgba(247,248,239,0.13)]">
               // TERMINAL NAVIGATION //
             </div>
             {navLinks.map((link) => (
@@ -116,13 +113,14 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-neutral-300 hover:text-white hover:translate-x-1 transition-transform border-b border-neutral-900"
+                className="block py-2 text-[#c8cfbd] hover:text-[#c7f85a] hover:translate-x-1 transition-transform border-b border-[rgba(247,248,239,0.08)]"
               >
                 &gt; {link.label}
               </a>
             ))}
-            <div className="pt-3 text-[11px] text-neutral-500">
-              SYS STATUS: ONLINE • PRIZE: RS 1,00,000
+            <div className="pt-3 text-[11px] text-[#aab1a2] flex items-center justify-between">
+              <span>SYS STATUS: <span className="text-[#0f8c7f] font-bold">ONLINE</span></span>
+              <span>PRIZE: <span className="text-[#c7f85a] font-bold">₹1,00,000</span></span>
             </div>
           </div>
         )}

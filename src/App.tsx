@@ -13,7 +13,10 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-mono selection:bg-white selection:text-black overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#080907] bg-workbench-gradient text-[#f7f8ef] font-mono selection:bg-[#c7f85a] selection:text-[#10120f] overflow-x-hidden">
+      {/* Background grid overlay using rgba(247, 248, 239, 0.045) */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay opacity-80" />
+
       {/* Site-wide interactive cursor-reactive dotted background */}
       <DotPattern
         width={24}
@@ -27,7 +30,7 @@ export default function App() {
       />
 
       {/* Subtle scanline CRT raster texture */}
-      <div className="pointer-events-none fixed inset-0 z-10 scanline-overlay opacity-30" />
+      <div className="pointer-events-none fixed inset-0 z-10 scanline-overlay opacity-20" />
 
       {/* Sticky top terminal navigation */}
       <Navbar />
@@ -45,7 +48,7 @@ export default function App() {
       </main>
 
       {/* ASCII Art & Sponsors Footer */}
-      <div className="relative z-20 bg-black/90 border-t border-neutral-900">
+      <div className="relative z-20 bg-[#12140f]/90 border-t border-[rgba(247,248,239,0.13)]">
         <AsciiFooter />
       </div>
 
@@ -53,11 +56,11 @@ export default function App() {
       <div className="sm:hidden fixed bottom-3 left-3 right-3 z-40">
         <a
           href="#register"
-          className="w-full py-3 px-4 bg-white text-black font-mono font-black text-xs tracking-wider flex items-center justify-between border-2 border-white shadow-2xl active:scale-95 transition-transform"
+          className="w-full btn-primary px-4 font-mono font-bold text-xs tracking-wider flex items-center justify-between shadow-2xl active:scale-95"
         >
           <span>// REGISTER FOR VOICE AI HACK //</span>
           <span className="flex items-center gap-1 font-bold">
-            SCAN/JOIN <ArrowUpRight size={14} />
+            JOIN NOW <ArrowUpRight size={14} />
           </span>
         </a>
       </div>

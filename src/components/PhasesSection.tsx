@@ -34,20 +34,20 @@ export function PhasesSection() {
   ];
 
   return (
-    <section id="phases" className="py-16 sm:py-24 border-b border-neutral-900 relative">
+    <section id="phases" className="py-16 sm:py-24 border-b border-[rgba(247,248,239,0.13)] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
           <div>
-            <div className="text-[11px] font-mono text-neutral-500 tracking-widest uppercase mb-1">
+            <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // PROTOCOL EXECUTION //
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
               PROTOCOL & PHASES
             </h2>
           </div>
-          <div className="font-mono text-xs text-neutral-400">
+          <div className="font-mono text-xs text-[#c8cfbd]">
             [TWO_STAGE_EVALUATION]
           </div>
         </div>
@@ -56,6 +56,7 @@ export function PhasesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {phases.map((phase, idx) => {
             const Icon = phase.icon;
+            const accentColor = idx === 0 ? "text-[#0f8c7f]" : "text-[#8b63ff]";
             return (
               <motion.div
                 key={phase.round}
@@ -63,38 +64,38 @@ export function PhasesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="relative border border-neutral-800 bg-neutral-950 p-6 sm:p-8 flex flex-col justify-between group hover:border-white transition-all duration-200"
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-6 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 {/* Top badges */}
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-neutral-500 pb-3 mb-4 border-b border-neutral-800">
-                    <span className="text-white font-bold">{phase.round}</span>
-                    <span className="px-2 py-0.5 border border-neutral-700 bg-black text-[10px] text-neutral-300 font-mono">
+                  <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
+                    <span className="text-[#c7f85a] font-bold">{phase.round}</span>
+                    <span className="px-2.5 py-0.5 border border-[rgba(247,248,239,0.13)] bg-[#181b14] text-[10px] text-[#c8cfbd] font-mono rounded-[4px]">
                       {phase.mode}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 border border-neutral-800 bg-black">
-                      <Icon size={22} className="text-white" />
+                    <div className="p-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px]">
+                      <Icon size={22} className={accentColor} />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display text-white tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
                       {phase.name}
                     </h3>
                   </div>
 
-                  <p className="font-mono text-xs sm:text-sm text-neutral-300 leading-relaxed my-4">
+                  <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] leading-relaxed my-4">
                     {phase.description}
                   </p>
 
-                  <div className="space-y-2 mt-4 pt-4 border-t border-neutral-900">
-                    <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+                  <div className="space-y-2 mt-4 pt-4 border-t border-[rgba(247,248,239,0.08)]">
+                    <div className="text-[10px] font-mono text-[#aab1a2] uppercase tracking-wider">
                       // PHASE CRITERIA & DELIVERABLES:
                     </div>
-                    <ul className="space-y-1.5 font-mono text-xs text-neutral-300">
+                    <ul className="space-y-1.5 font-mono text-xs text-[#c8cfbd]">
                       {phase.deliverables.map((item, dIdx) => (
                         <li key={dIdx} className="flex items-start gap-2">
-                          <span className="text-white font-bold">&gt;</span>
+                          <span className="text-[#c7f85a] font-bold">&gt;</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -102,9 +103,9 @@ export function PhasesSection() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-900 font-mono text-[11px] text-neutral-400 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] font-mono text-[11px] text-[#aab1a2] flex items-center justify-between">
                   <span>{phase.duration}</span>
-                  <span className="text-white">[VERIFIED]</span>
+                  <span className="text-[#0f8c7f] font-bold">[VERIFIED]</span>
                 </div>
               </motion.div>
             );

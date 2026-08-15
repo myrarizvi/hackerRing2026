@@ -4,12 +4,39 @@
   :root {
     --font-mono: 'JetBrains Mono', monospace;
     --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* PromptCompiler Base Palette */
+    --bg-base: #080907;
+    --bg-deep: #050604;
+    --surface: #12140f;
+    --surface-soft: #181b14;
+    --primary-text: #f7f8ef;
+    --muted-text: #aab1a2;
+    --muted-dark-text: #c8cfbd;
+    --border: rgba(247, 248, 239, 0.13);
+    --border-strong: rgba(247, 248, 239, 0.26);
+    --panel-glass: rgba(18, 20, 15, 0.76);
+
+    /* PromptCompiler Accent Palette */
+    --accent-lime: #c7f85a;
+    --accent-coral: #ff6f4e;
+    --accent-blue: #3f8cff;
+    --accent-teal: #0f8c7f;
+    --accent-violet: #8b63ff;
+    --accent-danger: #b83d4a;
+    --accent-success: #267246;
+    --accent-warning: #a76a00;
   }
 
   body {
     font-family: var(--font-mono);
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #080907;
+    color: #f7f8ef;
+  }
+
+  ::selection {
+    background-color: #c7f85a;
+    color: #10120f;
   }
 
   h1, h2, h3, .font-display {
@@ -17,44 +44,143 @@
   }
 }
 
-/* Custom terminal scanline overlay */
-.scanline-overlay {
+/* Background Treatment */
+.bg-workbench-gradient {
+  background: linear-gradient(180deg, #050604 0%, #080907 50%, #10130d 100%);
+}
+
+.bg-grid-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(247, 248, 239, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(247, 248, 239, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glass Floating Workstation Navbar */
+.nav-glass-panel {
+  background-color: rgba(18, 20, 15, 0.76);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 248, 239, 0.13);
+  box-shadow: 0 4px 24px rgba(5, 6, 4, 0.7);
+}
+
+/* PromptCompiler Button Specifications - Metallic Lime Upgrade */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #e4ff85 0%, #c7f85a 38%, #b2f232 70%, #8ebd1a 100%);
+  color: #0c0e08;
+  border: 1px solid rgba(228, 255, 133, 0.85);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  box-shadow: 
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(16, 18, 15, 0.45),
+    0 4px 14px rgba(199, 248, 90, 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
   background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.4)
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
   );
-  background-size: 100% 4px;
+  transform: skewX(-20deg);
+  transition: left 600ms ease;
+  pointer-events: none;
 }
 
-/* Halftone dither dot texture */
-.dither-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 8px 8px;
+.btn-primary:hover {
+  transform: translateY(-1.5px);
+  background: linear-gradient(145deg, #eeff9c 0%, #d2fa6e 38%, #bcf742 70%, #9bc926 100%);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 2px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 4px rgba(16, 18, 15, 0.5),
+    0 6px 20px rgba(199, 248, 90, 0.45);
 }
 
-/* Monochromatic glow styles */
-.mono-glow {
-  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.2);
+.btn-primary:hover::after {
+  left: 140%;
 }
 
-.mono-glow-lg {
-  box-shadow: 0 0 50px -10px rgba(255, 255, 255, 0.35);
+.btn-primary:active {
+  transform: translateY(0.5px);
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(199, 248, 90, 0.2);
 }
 
-.mono-text-glow {
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 7px;
+  background: linear-gradient(145deg, rgba(28, 31, 23, 0.9) 0%, rgba(18, 20, 15, 0.95) 100%);
+  color: #f7f8ef;
+  border: 1px solid rgba(247, 248, 239, 0.26);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  box-shadow: inset 0 1px 0 rgba(247, 248, 239, 0.15), 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 180ms ease-out;
+}
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(145deg, rgba(34, 38, 28, 0.95) 0%, rgba(24, 27, 20, 0.98) 100%);
+  border-color: rgba(247, 248, 239, 0.45);
+  color: #f7f8ef;
+  box-shadow: inset 0 1px 0 rgba(247, 248, 239, 0.25), 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Metallic Lime Text Utility */
+.metallic-lime-text,
+.lime-text-metallic {
+  background: linear-gradient(180deg, #f4ffbe 0%, #c7f85a 50%, #9ac92a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+/* Metallic Lime Badge / Pill Accent */
+.metallic-lime-badge {
+  background: linear-gradient(145deg, rgba(199, 248, 90, 0.18) 0%, rgba(199, 248, 90, 0.06) 100%);
+  border: 1px solid rgba(199, 248, 90, 0.45);
+  box-shadow: inset 0 1px 0.5px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(199, 248, 90, 0.15);
+}
+
+/* Metallic Lime Glow & Borders */
+.lime-text-glow {
+  text-shadow: 0 0 12px rgba(199, 248, 90, 0.45), 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.warm-text-glow {
+  text-shadow: 0 0 12px rgba(247, 248, 239, 0.25);
 }
 
 /* Glitch animation helpers */
 @keyframes glitch-skew {
   0% { transform: skew(0deg); }
-  20% { transform: skew(-2deg); }
-  40% { transform: skew(2deg); }
-  60% { transform: skew(-1deg); }
-  80% { transform: skew(1deg); }
+  20% { transform: skew(-1deg); }
+  40% { transform: skew(1deg); }
+  60% { transform: skew(-0.5deg); }
+  80% { transform: skew(0.5deg); }
   100% { transform: skew(0deg); }
 }
 
@@ -78,14 +204,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #050604;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 0px;
+  background: #181b14;
+  border: 1px solid rgba(247, 248, 239, 0.13);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #666666;
+  background: rgba(247, 248, 239, 0.26);
 }
+

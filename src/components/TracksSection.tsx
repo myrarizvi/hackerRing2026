@@ -26,20 +26,20 @@ export function TracksSection() {
   ];
 
   return (
-    <section id="tracks" className="py-16 sm:py-24 border-b border-neutral-900 relative">
+    <section id="tracks" className="py-16 sm:py-24 border-b border-[rgba(247,248,239,0.13)] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
           <div>
-            <div className="text-[11px] font-mono text-neutral-500 tracking-widest uppercase mb-1">
+            <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // DOMAIN ARCHITECTURES //
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
               HACKATHON TRACKS
             </h2>
           </div>
-          <div className="font-mono text-xs text-neutral-400">
+          <div className="font-mono text-xs text-[#c8cfbd]">
             [TWO_PARALLEL_CATEGORIES]
           </div>
         </div>
@@ -48,6 +48,7 @@ export function TracksSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tracks.map((track, idx) => {
             const Icon = track.icon;
+            const accentColor = idx === 0 ? "text-[#0f8c7f]" : "text-[#3f8cff]";
             return (
               <motion.div
                 key={track.code}
@@ -56,49 +57,49 @@ export function TracksSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 whileHover={{ y: -4 }}
-                className="relative border border-neutral-800 bg-neutral-950/90 p-6 sm:p-8 flex flex-col justify-between group hover:border-white transition-all duration-200"
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-6 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 {/* Visual Corner Brackets */}
-                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-white" />
-                <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-white" />
-                <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-white" />
-                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white" />
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[rgba(247,248,239,0.26)] rounded-tl-[7px]" />
+                <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[rgba(247,248,239,0.26)] rounded-tr-[7px]" />
+                <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[rgba(247,248,239,0.26)] rounded-bl-[7px]" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[rgba(247,248,239,0.26)] rounded-br-[7px]" />
 
                 <div>
                   {/* Top Bar */}
-                  <div className="flex items-center justify-between font-mono text-xs text-neutral-500 pb-3 mb-4 border-b border-neutral-800">
-                    <span className="text-white font-bold">[{track.code}]</span>
-                    <span className="text-[11px] text-neutral-400 uppercase">// ACTIVE DIVISION //</span>
+                  <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
+                    <span className="text-[#c7f85a] font-bold">[{track.code}]</span>
+                    <span className="text-[11px] text-[#c8cfbd] uppercase">// ACTIVE DIVISION //</span>
                   </div>
 
                   {/* Icon & Title */}
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 border border-neutral-700 bg-black group-hover:border-white transition-colors">
-                      <Icon size={28} className="text-white" />
+                    <div className="p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px] group-hover:border-[rgba(247,248,239,0.26)] transition-colors">
+                      <Icon size={28} className={accentColor} />
                     </div>
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-black font-display text-white tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight">
                         {track.title}
                       </h3>
-                      <p className="font-mono text-xs text-neutral-400 mt-1">
+                      <p className="font-mono text-xs text-[#aab1a2] mt-1">
                         {track.subtitle}
                       </p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="font-mono text-xs sm:text-sm text-neutral-300 leading-relaxed my-4">
+                  <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] leading-relaxed my-4">
                     {track.description}
                   </p>
 
                   {/* Keywords Tag Matrix */}
                   <div className="pt-2">
-                    <div className="text-[10px] font-mono text-neutral-500 uppercase mb-2">// TECHNICAL SCOPE:</div>
+                    <div className="text-[10px] font-mono text-[#aab1a2] uppercase mb-2">// TECHNICAL SCOPE:</div>
                     <div className="flex flex-wrap gap-1.5">
                       {track.keywords.map((kw) => (
                         <span
                           key={kw}
-                          className="font-mono text-[11px] px-2 py-0.5 border border-neutral-800 bg-black text-neutral-300"
+                          className="font-mono text-[11px] px-2.5 py-1 border border-[rgba(247,248,239,0.13)] bg-[#181b14] text-[#c8cfbd] rounded-[4px]"
                         >
                           +{kw}
                         </span>
@@ -108,9 +109,9 @@ export function TracksSection() {
                 </div>
 
                 {/* Bottom Spec Footer */}
-                <div className="mt-6 pt-4 border-t border-neutral-900 flex items-center justify-between font-mono text-[11px] text-neutral-400">
+                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] flex items-center justify-between font-mono text-[11px] text-[#aab1a2]">
                   <span>ELIGIBILITY: OPEN TO ALL</span>
-                  <span className="text-white font-bold">&gt; REGISTER THIS TRACK</span>
+                  <a href="#register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</a>
                 </div>
               </motion.div>
             );
