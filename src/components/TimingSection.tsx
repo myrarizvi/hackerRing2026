@@ -8,17 +8,28 @@ export function TimingSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
           <div>
-            <div className="text-[11px] font-mono text-neutral-500 tracking-widest uppercase mb-1">
+            <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // ENDURANCE SPECIFICATION //
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight uppercase">
+            {/* ANSI Shadow ASCII Art Title */}
+            <div className="overflow-x-auto py-1">
+              <pre className="font-mono text-[7px] sm:text-[10px] md:text-[12px] leading-tight text-[#c7f85a] select-none">
+{`████████╗██╗███╗   ███╗██╗███╗   ██╗██████╗ 
+╚══██╔══╝██║████╗ ████║██║████╗  ██║██╔════╝ 
+   ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗
+   ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║
+   ██║   ██║██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝
+   ╚═╝   ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ `}
+              </pre>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight uppercase mt-1">
               HACKATHON TIMING
             </h2>
           </div>
-          <div className="font-mono text-xs text-neutral-400">
-            [NON_STOP_EXECUTION]
+          <div className="font-mono text-xs text-[#c8cfbd]">
+            [36_HOUR_NON_STOP_SPRINT]
           </div>
         </div>
 

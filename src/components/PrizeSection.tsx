@@ -32,12 +32,27 @@ export function PrizeSection() {
             <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // REWARDS & BOUNTIES //
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
+            {/* ANSI Shadow ASCII Art Title */}
+            <div className="overflow-x-auto py-1">
+              <pre className="font-mono text-[7px] sm:text-[10px] md:text-[12px] leading-tight text-[#c7f85a] select-none">
+{`██████╗ ██████╗ ██╗███████╗███████╗███████╗
+██╔══██╗██╔══██╗██║╚══███╔╝██╔════╝██╔════╝
+██████╔╝██████╔╝██║  ███╔╝ █████╗  ███████╗
+██╔═══╝ ██╔══██╗██║ ███╔╝  ██╔══╝  ╚════██║
+██║     ██║  ██║██║███████╗███████╗███████║
+╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝`}
+              </pre>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight uppercase mt-1">
               PRIZE POOL
             </h2>
           </div>
-          <div className="font-mono text-xs text-[#c8cfbd]">
-            [GUARANTEED_TOTAL_REWARDS]
+          <div className="font-mono text-xs text-[#c8cfbd] flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c7f85a] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c7f85a]"></span>
+            </span>
+            <span>[GUARANTEED_TOTAL_REWARDS]</span>
           </div>
         </div>
 
