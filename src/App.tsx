@@ -26,8 +26,6 @@ export default function App() {
         setIs404(true);
       } else {
         setIs404(false);
-        // Trigger curtain split when returning/navigating to homepage
-        setTransitionKey(Date.now());
       }
     };
     checkPath();
