@@ -87,7 +87,7 @@ export default function App() {
               href="#register"
               className="w-full btn-primary px-4 font-mono font-bold text-xs tracking-wider flex items-center justify-between shadow-2xl active:scale-95"
             >
-              <span>// REGISTER FOR VOICE AI HACK //</span>
+              <span>// REGISTER FOR HackerRing 26' //</span>
               <span className="flex items-center gap-1 font-bold">
                 JOIN NOW <ArrowUpRight size={14} />
               </span>

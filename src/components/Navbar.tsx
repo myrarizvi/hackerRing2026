@@ -58,7 +58,7 @@ export function Navbar() {
             <div className="w-5 h-5 border border-[rgba(247,248,239,0.26)] flex items-center justify-center bg-[#12140f] rounded-[4px]">
               <span className="w-2 h-2 bg-[#c7f85a] block animate-pulse rounded-[1px]" />
             </div>
-            <span className="text-sm tracking-tighter sm:tracking-widest">VOICE_AI_HACK</span>
+            <span className="text-sm tracking-tighter sm:tracking-widest">HACKERRING_26'</span>
             <span className="hidden md:inline text-[#aab1a2] text-[10px]">// RVITM //</span>
           </a>
 

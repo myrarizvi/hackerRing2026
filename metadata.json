@@ -1,6 +1,6 @@
 {
-  "name": "VOICE AI HACK",
-  "description": "Motion-heavy, terminal-style hackathon landing page for VOICE AI HACK.",
+  "name": "HackerRing 26'",
+  "description": "Motion-heavy, terminal-style hackathon landing page for HackerRing 26'.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

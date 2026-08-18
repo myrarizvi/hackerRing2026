@@ -1,6 +1,6 @@
-# Voice AI Hackathon Landing Page
+# HackerRing 26' Landing Page
 
-A highly interactive, terminal/hacker-themed landing page for a Voice AI Hackathon. Built with React, Vite, and Tailwind CSS, this landing page features a bold, monochrome brutalist aesthetic, complete with dynamic animations, CRT scanline effects, and live audio waveform visualizations.
+A highly interactive, terminal/hacker-themed landing page for HackerRing 26'. Built with React, Vite, and Tailwind CSS, this landing page features a bold, monochrome brutalist aesthetic, complete with dynamic animations, CRT scanline effects, and live audio waveform visualizations.
 
 ## 🚀 Features
 
