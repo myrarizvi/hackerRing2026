@@ -15,14 +15,10 @@ import { NotFoundPage } from "@/components/NotFoundPage";
 import { LoadingOverlay } from "@/components/LoadingOverlay";
 import { RegistrationPage } from "@/components/RegistrationPage";
 import { ArrowUpRight } from "lucide-react";
-import { supabase } from './lib/supabase';
-import { useEffect } from 'react';
 
-useEffect(() => {
-  supabase.from('teams').select('*').limit(1).then(({ data, error }) => {
-    console.log('Test query:', { data, error });
-  });
-}, []);
+
+
+
 
 export default function App() {
   const [transitionKey] = useState<number>(Date.now());

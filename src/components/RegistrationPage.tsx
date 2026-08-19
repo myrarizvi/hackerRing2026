@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { supabase } from "../lib/supabase";
 import { ArrowLeft, Plus, Trash2, Upload, User, Terminal } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -60,11 +61,10 @@ function TerminalInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className={`bg-[#181b14] border ${
-          error
+        className={`bg-[#181b14] border ${error
             ? "border-[#ff6f4e] focus:border-[#ff6f4e]"
             : "border-[rgba(247,248,239,0.18)] focus:border-[#c7f85a]"
-        } rounded-[6px] px-3 py-2.5 font-mono text-xs text-[#f7f8ef] placeholder:text-[#4a5040] outline-none transition-colors duration-150 w-full`}
+          } rounded-[6px] px-3 py-2.5 font-mono text-xs text-[#f7f8ef] placeholder:text-[#4a5040] outline-none transition-colors duration-150 w-full`}
       />
       {error && (
         <span className="font-mono text-[10px] text-[#ff6f4e]">&gt; {error}</span>
@@ -201,6 +201,8 @@ export function RegistrationPage() {
   ]);
   const [errors, setErrors] = useState<FieldErrors>({ participants: {} });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // ── Participant helpers ──
 
@@ -260,13 +262,14 @@ export function RegistrationPage() {
 
     participants.forEach((p) => {
       const pErrors: Partial<Record<keyof Omit<Participant, "id" | "resume">, string>> = {};
-      if (!p.name.trim())     { pErrors.name     = "Required";  valid = false; }
-      if (!p.phone.trim())    { pErrors.phone    = "Required";  valid = false; }
-      if (!p.email.trim())    { pErrors.email    = "Required";  valid = false; }
+      if (!p.name.trim()) { pErrors.name = "Required"; valid = false; }
+      if (!p.phone.trim()) { pErrors.phone = "Required"; valid = false; }
+      if (!p.email.trim()) { pErrors.email = "Required"; valid = false; }
       else if (!/\S+@\S+\.\S+/.test(p.email)) {
-                               pErrors.email    = "Invalid email"; valid = false; }
-      if (!p.github.trim())   { pErrors.github   = "Required";  valid = false; }
-      if (!p.linkedin.trim()) { pErrors.linkedin = "Required";  valid = false; }
+        pErrors.email = "Invalid email"; valid = false;
+      }
+      if (!p.github.trim()) { pErrors.github = "Required"; valid = false; }
+      if (!p.linkedin.trim()) { pErrors.linkedin = "Required"; valid = false; }
       if (Object.keys(pErrors).length) newErrors.participants[p.id] = pErrors;
     });
 
@@ -274,10 +277,64 @@ export function RegistrationPage() {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // 1. Insert the team
+      const { data: teamData, error: teamError } = await supabase
+        .from("teams")
+        .insert({ team_name: teamName, college_name: collegeName })
+        .select()
+        .single();
+
+      if (teamError) throw new Error(`Team creation failed: ${teamError.message}`);
+
+      const teamId = teamData.id;
+
+      // 2. Insert each participant, uploading resume first if present
+      for (const p of participants) {
+        let resumeUrl: string | null = null;
+
+        if (p.resume) {
+          const fileExt = p.resume.name.split(".").pop();
+          const filePath = `${teamId}/${p.name.replace(/\s+/g, "_")}_${Date.now()}.${fileExt}`;
+
+          const { error: uploadError } = await supabase.storage
+            .from("resumes")
+            .upload(filePath, p.resume);
+
+          if (uploadError) throw new Error(`Resume upload failed for ${p.name}: ${uploadError.message}`);
+
+          const { data: publicUrlData } = supabase.storage
+            .from("resumes")
+            .getPublicUrl(filePath);
+
+          resumeUrl = publicUrlData.publicUrl;
+        }
+
+        const { error: participantError } = await supabase.from("participants").insert({
+          team_id: teamId,
+          name: p.name,
+          phone: p.phone,
+          email: p.email,
+          github: p.github,
+          linkedin: p.linkedin,
+          resume_url: resumeUrl,
+        });
+
+        if (participantError) throw new Error(`Participant insert failed for ${p.name}: ${participantError.message}`);
+      }
+
       setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -332,13 +389,7 @@ export function RegistrationPage() {
             <p className="text-xs text-[#c8cfbd] leading-relaxed">
               Your submission has been queued. The organizing team will reach out to your registered email shortly.
             </p>
-            <button
-              type="button"
-              onClick={() => setSubmitted(false)}
-              className="btn-secondary px-6 py-2.5 text-xs mx-auto"
-            >
-              EDIT SUBMISSION
-            </button>
+            
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} noValidate className="space-y-8">
@@ -425,12 +476,18 @@ export function RegistrationPage() {
             >
               <button
                 type="submit"
-                className="w-full btn-primary py-4 text-sm tracking-wider flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full btn-primary py-4 text-sm tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>[SUBMIT REGISTRATION]</span>
+                <span>{isSubmitting ? "[SUBMITTING...]" : "[SUBMIT REGISTRATION]"}</span>
               </button>
+              {submitError && (
+                <p className="font-mono text-[11px] text-[#ff6f4e] mt-3 text-center">
+                  &gt; ERROR: {submitError}
+                </p>
+              )}
               <p className="font-mono text-[10px] text-[#4a5040] mt-3 text-center">
-                // All fields marked with <span className="text-[#ff6f4e]">*</span> are required before submission //
+  // All fields marked with <span className="text-[#ff6f4e]">*</span> are required before submission //
               </p>
             </motion.div>
 
