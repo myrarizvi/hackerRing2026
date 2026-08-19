@@ -93,23 +93,23 @@ export function PrizeSection() {
             </div>
 
             <p className="text-sm sm:text-base font-mono text-[#c8cfbd] max-w-lg mx-auto pt-2">
-              <span className="text-[#c7f85a] font-bold">₹1,00,000</span> Total Prize Pool across Voice AI Hardware & Software Tracks.
+              <span className="text-[#c7f85a] font-bold">₹1,00,000</span> Total Prize Pool across Hardware & Software Tracks.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 font-mono text-xs text-left">
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 01 //</span>
-                <div className="font-bold text-[#f7f8ef]">Voice AI Hardware</div>
+                <div className="font-bold text-[#f7f8ef]"> Hardware</div>
                 <div className="text-[#aab1a2] text-[11px] mt-1">Cash Bounties + Mentorship</div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 02 //</span>
-                <div className="font-bold text-[#f7f8ef]">Voice AI Software</div>
+                <div className="font-bold text-[#f7f8ef]">Software</div>
                 <div className="text-[#aab1a2] text-[11px] mt-1">Cash Bounties + Deployment Grants</div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
-                <span className="text-[10px] text-[#aab1a2] block mb-0.5">// SPECIAL //</span>
-                <div className="font-bold text-[#f7f8ef]">Voice AI Space Perks</div>
+                <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 03 //</span>
+                <div className="font-bold text-[#f7f8ef]"> AR / VR & IMMERSIVE TECH</div>
                 <div className="text-[#aab1a2] text-[11px] mt-1">Direct Industry Incubation</div>
               </div>
             </div>

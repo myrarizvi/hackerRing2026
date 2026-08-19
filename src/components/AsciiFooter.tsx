@@ -90,7 +90,7 @@ export function AsciiFooter() {
           <div>
             <div className="text-[#f7f8ef] font-bold mb-2">[Hacker-Ring 2.0]</div>
             <p className="text-[#aab1a2] text-[11px] leading-relaxed">
-              Organized by Department of ECE & AIML at RV Institute of Technology and Management in collaboration with Voice AI Space.
+              Organized by RV Institute of Technology and Management.
             </p>
           </div>
 

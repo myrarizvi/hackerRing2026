@@ -5,7 +5,7 @@ export function TracksSection() {
   const tracks = [
     {
       code: "TRK_01",
-      title: "Voice AI Hardware",
+      title: "Hardware",
       icon: Cpu,
       subtitle: "Embedded Speech & Edge Audio Architectures",
       description:
@@ -15,7 +15,7 @@ export function TracksSection() {
     },
     {
       code: "TRK_02",
-      title: "Voice AI Software",
+      title: "Software",
       icon: Code2,
       subtitle: "Full-Stack Speech AI, LLM Voice Agents & Audio Pipelines",
       description:

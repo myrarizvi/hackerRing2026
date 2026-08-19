@@ -22,7 +22,7 @@ const MILESTONES: Milestone[] = [
     milestone: "Hackathon Round 1",
     date: "19th September",
     status: "upcoming",
-    description: "Online Shortlisting Round. Evaluation of voice tech architectures.",
+    description: "Online Shortlisting Round. Evaluation of  tech architectures.",
   },
   {
     id: "04",

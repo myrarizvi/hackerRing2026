@@ -23,9 +23,9 @@ export function PhasesSection() {
       mode: "IN-PERSON HACKATHON",
       duration: "Continuous 36 Hours Marathon",
       description:
-        "Shortlisted teams assemble at the RVITM Campus for an uninterrupted 36-hour physical build marathon with hardware benches, live testing rigs, and on-site industry mentorship from Voice AI Space.",
+        "Shortlisted teams assemble at the RVITM Campus for an uninterrupted 36-hour physical build marathon with hardware benches, live testing rigs, and on-site industry mentorship.",
       deliverables: [
-        "Working Voice AI Hardware / Software Deployment",
+        "Working Hardware / Software Deployment",
         "Live Physical Demonstration to Jury",
         "Final Q&A and Prototype Stress-Testing",
       ],

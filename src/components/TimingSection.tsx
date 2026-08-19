@@ -63,7 +63,7 @@ export function TimingSection() {
               </div>
 
               <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] max-w-lg leading-relaxed">
-                36 Hours of uninterrupted hacking, rapid hardware prototyping, neural audio training, and voice interface deployment at the RVITM Campus.
+                A high-energy 36-hour build where ideas turn into working prototypes at the RVITM Campus.
               </p>
             </div>
 
@@ -71,12 +71,12 @@ export function TimingSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs lg:w-96">
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 space-y-1 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <div className="text-[#aab1a2] text-[10px]">// POWER & NETWORK //</div>
-                <div className="text-[#f7f8ef] font-bold">24/7 Gigabit LAN & Labs</div>
-                <div className="text-[#c8cfbd] text-[11px]">Continuous test benches</div>
+                <div className="text-[#f7f8ef] font-bold">Collaborate and Build</div>
+                <div className="text-[#c8cfbd] text-[11px]">Open space to ideate, build, and innovate</div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 space-y-1 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <div className="text-[#aab1a2] text-[10px]">// MENTORSHIP //</div>
-                <div className="text-[#f7f8ef] font-bold">Voice AI Space Experts</div>
+                <div className="text-[#f7f8ef] font-bold">Expert Mentors & Guidance</div>
                 <div className="text-[#c8cfbd] text-[11px]">Round-the-clock reviews</div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 space-y-1 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
