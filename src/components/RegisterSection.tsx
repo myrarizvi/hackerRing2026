@@ -136,7 +136,7 @@ export function RegisterSection() {
                   <span>REGISTRATION PROTOCOL // 2026</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
-                  ENTER HackerRing 26'
+                  ENTER Hacker-Ring 2.0
                 </h3>
                 <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] mt-2 leading-relaxed">
                   Open to all student developers, hardware engineers, and AI researchers. Form teams of 2 to 4 members or register individually to join the talent pool.

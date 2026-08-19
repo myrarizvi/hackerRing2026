@@ -17,12 +17,12 @@ export function AsciiFooter() {
   };
 
   const asciiArt = `
-██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ ██████╗ ██╗███╗   ██╗ ██████╗     ██████╗  ██████╗ 
-██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗██╔══██╗██║████╗  ██║██╔════╝     ╚════██╗██╔════╝ 
-███████║███████║██║     █████╔╝ █████╗  ██████╔╝██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝███████╗ 
-██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝ ██╔═══██╗
-██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗╚██████╔╝
-╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝ ╚═════╝ 
+██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ████╗     ██████╗     ██████╗ 
+██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔══╝     ╚════██╗   ██╔═████╗
+███████║███████║██║     █████╔╝ █████╗  ██████╔╝█████╗██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝   ██║██╔██║
+██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗╚════╝██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝    ████╔╝██║
+██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║      ██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗██╗╚██████╔╝
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝ 
 `;
 
   const sponsors = [
@@ -88,7 +88,7 @@ export function AsciiFooter() {
         {/* Footer Meta Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-[rgba(247,248,239,0.13)] text-[#c8cfbd]">
           <div>
-            <div className="text-[#f7f8ef] font-bold mb-2">[HackerRing 26']</div>
+            <div className="text-[#f7f8ef] font-bold mb-2">[Hacker-Ring 2.0]</div>
             <p className="text-[#aab1a2] text-[11px] leading-relaxed">
               Organized by Department of ECE & AIML at RV Institute of Technology and Management in collaboration with Voice AI Space.
             </p>
@@ -118,7 +118,7 @@ export function AsciiFooter() {
         {/* Bottom copyright line */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-6 text-[10px] text-[#aab1a2]">
           <div>
-            &copy; 2026 RVITM & VOICE AI SPACE. ALL RIGHTS RESERVED.
+            &copy; 2026 Hacker-Ring. All rights reserved.
           </div>
           <div>
             // TERMINAL_BUILD_STATE: STABLE //

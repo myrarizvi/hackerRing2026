@@ -6,12 +6,12 @@ import { TiltCard } from "./TiltCard";
 const GLITCH_CHARS = "█▓▒░#$/@%&*+=~<>[]01";
 
 const ASCII_ART_LINES = [
-  "██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ ██████╗ ██╗███╗   ██╗ ██████╗     ██████╗  ██████╗ ",
-  "██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗██╔══██╗██║████╗  ██║██╔════╝     ╚════██╗██╔════╝ ",
-  "███████║███████║██║     █████╔╝ █████╗  ██████╔╝██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝███████╗ ",
-  "██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝ ██╔═══██╗",
-  "██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗╚██████╔╝",
-  "╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝ ╚═════╝ ",
+  "██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ████╗     ██████╗     ██████╗ ",
+  "██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔══╝     ╚════██╗   ██╔═████╗",
+  "███████║███████║██║     █████╔╝ █████╗  ██████╔╝█████╗██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝   ██║██╔██║",
+  "██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗╚════╝██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝    ████╔╝██║",
+  "██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║      ██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗██╗╚██████╔╝",
+  "╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝",
 ];
 
 export function HeroSection() {
@@ -105,14 +105,7 @@ export function HeroSection() {
             </motion.pre>
           </div>
 
-          {/* Collaboration Sub-banner */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-[#c8cfbd]">
-            <span className="text-[#aab1a2]">// COLLABORATION //</span>
-            <span>In Collaboration with</span>
-            <span className="metallic-lime-badge metallic-lime-text px-2.5 py-0.5 font-bold tracking-wider rounded-[5px]">
-              VOICE AI SPACE
-            </span>
-          </div>
+      
 
           {/* Action Buttons Section */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1 w-full sm:w-auto px-2">
@@ -151,7 +144,10 @@ export function HeroSection() {
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
                 <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_02]</span>
-                <p className="font-semibold text-[#f7f8ef] leading-snug">Department of AI/ML Engineering</p>
+                <p className="font-semibold text-[#f7f8ef] leading-snug text-center">
+                  <span className="block">Department of CSE (AI/ML) Engineering</span>
+                  <span className="block">CSE Cluster </span>
+                </p>
               </div>
             </TiltCard>
             <TiltCard>

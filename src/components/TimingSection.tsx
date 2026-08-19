@@ -16,16 +16,16 @@ export function TimingSection() {
             {/* ANSI Shadow ASCII Art Title */}
             <div className="overflow-x-auto py-1">
               <pre className="font-mono text-[7px] sm:text-[10px] md:text-[12px] leading-tight text-[#c7f85a] select-none">
-{`████████╗██╗███╗   ███╗██╗███╗   ██╗██████╗ 
-╚══██╔══╝██║████╗ ████║██║████╗  ██║██╔════╝ 
-   ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗
-   ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║
-   ██║   ██║██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝
-   ╚═╝   ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ `}
+{`██████╗ ██╗   ██╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+██╔══██╗██║   ██║██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+██║  ██║██║   ██║██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
+██║  ██║██║   ██║██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+██████╔╝╚██████╔╝██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝`}
               </pre>
-            </div>
+            </div>  
             <h2 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight uppercase mt-1">
-              HACKATHON TIMING
+              HACKATHON DURATION
             </h2>
           </div>
           <div className="font-mono text-xs text-[#c8cfbd]">

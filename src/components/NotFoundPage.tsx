@@ -111,7 +111,7 @@ export function NotFoundPage() {
 
       {/* Footer Info */}
       <div className="max-w-5xl mx-auto w-full pt-8 border-t border-[rgba(247,248,239,0.13)] mt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#aab1a2] gap-2">
-        <span>HackerRing 26' // RVITM 2026</span>
+        <span>Hacker-Ring 2.0 // RVITM 2026</span>
         <span>ERROR_PROTOCOL_V2.4</span>
       </div>
 

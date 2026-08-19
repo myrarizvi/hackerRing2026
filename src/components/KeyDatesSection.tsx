@@ -106,14 +106,7 @@ export function KeyDatesSection() {
           ))}
         </div>
 
-        {/* Timeline Bar Indicator */}
-        <div className="mt-8 p-3.5 border border-[rgba(247,248,239,0.13)] bg-[#12140f] rounded-[8px] flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-[#c8cfbd] gap-2">
-          <div className="flex items-center gap-2">
-            <span className="text-[#c7f85a] font-bold">&gt;&gt;</span>
-            <span>CRITICAL PATH: 17 AUG &rarr; 17 SEP &rarr; 19 SEP &rarr; 20 SEP &rarr; 25 SEP</span>
-          </div>
-          <span className="text-[#aab1a2] text-[10px]">[OFFLINE VENUE: RVITM CAMPUS]</span>
-        </div>
+        
 
       </div>
     </section>

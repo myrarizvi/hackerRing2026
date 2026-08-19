@@ -1,6 +1,6 @@
-# HackerRing 26' Landing Page
+# Hacker-Ring 2.0 Landing Page
 
-A highly interactive, terminal/hacker-themed landing page for HackerRing 26'. Built with React, Vite, and Tailwind CSS, this landing page features a bold, monochrome brutalist aesthetic, complete with dynamic animations, CRT scanline effects, and live audio waveform visualizations.
+A highly interactive, terminal/hacker-themed landing page for Hacker-Ring 2.0. Built with React, Vite, and Tailwind CSS, this landing page features a bold, monochrome brutalist aesthetic, complete with dynamic animations, CRT scanline effects, and live audio waveform visualizations.
 
 ## 🚀 Features
 
