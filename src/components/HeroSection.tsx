@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import { Link } from "react-router-dom";
 import rvLogo from "../assets/logos/rv-logo.png";
 import startupLogo from "../assets/logos/startup-cell-logo.png";
 import gdgLogo from "../assets/logos/gdg-logo.png";
@@ -117,13 +118,13 @@ export function HeroSection() {
 
           {/* Action Buttons Section */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1 w-full sm:w-auto px-2">
-            <a
-              href="#register"
+            <Link
+              to="/register"
               className="w-full sm:w-auto btn-primary px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2.5 group"
             >
               <span>ACCESS REGISTRATION</span>
               <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
             <a
               href="#dates"
               className="w-full sm:w-auto btn-secondary px-5 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2 group"

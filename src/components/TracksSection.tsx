@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Cpu, Code2, Microchip, Layers, Radio, Sparkles, Terminal, Activity } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function TracksSection() {
   const tracks = [
@@ -122,7 +123,7 @@ export function TracksSection() {
                 {/* Bottom Spec Footer */}
                 <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] flex items-center justify-between font-mono text-[11px] text-[#aab1a2]">
                   <span>ELIGIBILITY: OPEN TO ALL</span>
-                  <a href="#register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</a>
+                  <Link to="/register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</Link>
                 </div>
               </motion.div>
             );

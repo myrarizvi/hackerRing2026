@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X, Radio } from "lucide-react";
 import { motion, useScroll, useSpring } from "motion/react";
+import { useNavigate, Link } from "react-router-dom";
 
 export function Navbar() {
   const [currentTime, setCurrentTime] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -30,14 +32,26 @@ export function Navbar() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const navLinks = [
-    { label: "DATES", href: "#dates" },
-    { label: "PRIZES", href: "#prizes" },
-    { label: "TRACKS", href: "#tracks" },
-    { label: "PHASES", href: "#phases" },
-    { label: "TIMING", href: "#timing" },
-    { label: "REGISTER", href: "#register" },
-    { label: "CONTACT", href: "#contact" },
+    { label: "DATES", id: "dates" },
+    { label: "PRIZES", id: "prizes" },
+    { label: "TRACKS", id: "tracks" },
+    { label: "PHASES", id: "phases" },
+    { label: "TIMING", id: "timing" },
+    { label: "CONTACT", id: "contact" },
   ];
 
   return (
@@ -65,13 +79,13 @@ export function Navbar() {
           {/* Center navigation */}
           <nav className="hidden lg:flex items-center gap-6 text-[#c7f85a]">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                className="hover:text-[#f7f8ef] transition-colors duration-150 relative py-1 hover:border-b hover:border-[#c7f85a]"
+                onClick={() => scrollToSection(link.id)}
+                className="hover:text-[#f7f8ef] transition-colors duration-150 relative py-1 hover:border-b hover:border-[#c7f85a] bg-transparent border-none cursor-pointer font-mono text-xs text-[#c7f85a]"
               >
                 [{link.label}]
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -83,13 +97,13 @@ export function Navbar() {
               <span className="text-[11px]">{currentTime || "SYS_READY"}</span>
             </div>
 
-            <a
-              href="#register"
+            <Link
+              to="/register"
               className="btn-primary px-3.5 py-1 text-xs tracking-wider flex items-center gap-1.5"
             >
               <span>REGISTER NOW</span>
               <ArrowUpRight size={14} />
-            </a>
+            </Link>
 
             {/* Mobile menu toggle */}
             <button
@@ -109,14 +123,16 @@ export function Navbar() {
               // TERMINAL NAVIGATION //
             </div>
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-[#c8cfbd] hover:text-[#c7f85a] hover:translate-x-1 transition-transform border-b border-[rgba(247,248,239,0.08)]"
+                onClick={() => {
+                  scrollToSection(link.id);
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#c8cfbd] hover:text-[#c7f85a] hover:translate-x-1 transition-transform border-b border-[rgba(247,248,239,0.08)] bg-transparent border-x-0 border-t-0 cursor-pointer font-mono text-sm"
               >
                 &gt; {link.label}
-              </a>
+              </button>
             ))}
             <div className="pt-3 text-[11px] text-[#aab1a2] flex items-center justify-between">
               <span>SYS STATUS: <span className="text-[#0f8c7f] font-bold">ONLINE</span></span>
@@ -128,5 +144,6 @@ export function Navbar() {
     </>
   );
 }
+
 
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
@@ -204,6 +204,11 @@ export function RegistrationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  // Scroll to top on mount so the page always lands at the navbar
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // ── Participant helpers ──
 
   const updateParticipant = (
@@ -345,13 +350,13 @@ export function RegistrationPage() {
       <div className="max-w-3xl mx-auto">
 
         {/* Back nav */}
-        <div className="mb-8">
+        <div className="mb-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-mono text-xs text-[#aab1a2] hover:text-[#c7f85a] transition-colors duration-150"
+            className="group inline-flex items-center gap-2.5 font-mono text-[#c7f85a] border border-[rgba(199,248,90,0.35)] bg-[#12140f]/80 hover:bg-[#141a0d] hover:border-[rgba(199,248,90,0.65)] hover:shadow-[0_0_12px_rgba(199,248,90,0.12)] px-4 py-2.5 rounded-[6px] transition-all duration-200 text-[15px] tracking-wide"
           >
-            <ArrowLeft size={13} />
-            <span>[ RETURN TO MAIN TERMINAL ]</span>
+            <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1 flex-shrink-0" />
+            <span>RETURN TO MAIN TERMINAL</span>
           </Link>
         </div>
 
