@@ -139,68 +139,68 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 pt-4 pb-2 font-mono text-xs text-[#c8cfbd] w-full"
+          className="flex flex-col gap-2.5 pt-4 pb-2 font-mono text-xs text-[#c8cfbd] w-full"
         >
-          {/* Top Row: 3 Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 w-full">
+          {/* Host Institution — compact, centered, visually distinct */}
+          <div className="flex justify-center">
             <TiltCard>
-              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <div className="flex items-center gap-3">
-                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
-                  <div>
-                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_01]</span>
-                    <p className="font-semibold text-[#f7f8ef] leading-snug">Department of Electronics & Communications Engineering</p>
-                  </div>
-                </div>
-              </div>
-            </TiltCard>
-            <TiltCard>
-              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <div className="flex items-center gap-3">
-                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
-                  <div>
-                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_02]</span>
-                    <p className="font-semibold text-[#f7f8ef] leading-snug">
-                      <span className="block">Department of CSE (AI/ML) Engineering</span>
-                      <span className="block">CSE Cluster </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </TiltCard>
-            <TiltCard>
-              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <div className="flex items-center gap-3">
-                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
-                  <div>
-                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[INSTITUTION]</span>
-                    <p className="font-bold text-[#f7f8ef] leading-snug">RV Institute of Technology and Management</p>
-                  </div>
+              <div className="border border-[rgba(199,248,90,0.25)] bg-[#141710] px-4 py-2.5 rounded-[8px] flex items-center gap-3 relative group hover:bg-[#191e0f] hover:border-[rgba(199,248,90,0.4)] transition-all duration-200">
+                <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                <div>
+                  <span className="text-[10px] text-[#c7f85a] tracking-widest uppercase block mb-0.5">[HOST_INSTITUTION]</span>
+                  <p className="font-bold text-[#f7f8ef] leading-snug text-sm">RV Institute of Technology and Management</p>
                 </div>
               </div>
             </TiltCard>
           </div>
 
-          {/* Bottom Row: 2 Boxes Centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto w-full">
+          {/* Section label */}
+          <div className="text-[10px] font-mono text-[#aab1a2] tracking-widest uppercase text-center pt-0.5">
+            // ORGANIZING_UNITS //
+          </div>
+
+          {/* 4-card grid — all organizers in one row */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 w-full">
             <TiltCard>
-              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200 text-left">
-                <div className="flex items-center gap-3">
-                  <img src={startupLogo} alt="Startup Ignition Cell logo" className="w-10 h-10 object-contain flex-shrink-0" />
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={rvLogo} alt="ECE Department logo" className="w-9 h-9 object-contain flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_03]</span>
-                    <p className="font-semibold text-[#f7f8ef] leading-snug">Startup Ignition Cell</p>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_01]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Dept. of Electronics &amp; Communications Engineering</p>
                   </div>
                 </div>
               </div>
             </TiltCard>
             <TiltCard>
-              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200 text-left">
-                <div className="flex items-center gap-3">
-                  <img src={gdgLogo} alt="GDG RVITM logo" className="w-10 h-10 object-contain flex-shrink-0" />
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={rvLogo} alt="CSE AI/ML Department logo" className="w-9 h-9 object-contain flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_04]</span>
-                    <p className="font-semibold text-[#f7f8ef] leading-snug">GDG RVITM</p>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_02]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Dept. of CSE (AI/ML) Engineering</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={startupLogo} alt="Startup Ignition Cell logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_03]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Startup Ignition Cell</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={gdgLogo} alt="GDG RVITM logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_04]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">GDG RVITM</p>
                   </div>
                 </div>
               </div>
