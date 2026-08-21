@@ -76,7 +76,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative sm:min-h-[calc(100vh-4rem)] sm:min-h-[calc(100dvh-4rem)] flex flex-col justify-between pt-16 sm:pt-12 pb-24 sm:pb-12 overflow-hidden border-b border-[rgba(247,248,239,0.13)]">
+    <section className="relative sm:min-h-[calc(100vh-4rem)] sm:min-h-[calc(100dvh-4rem)] flex flex-col justify-between pt-16 sm:pt-12 pb-10 sm:pb-12 overflow-hidden border-b border-[rgba(247,248,239,0.13)]">
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full flex-1 flex flex-col justify-between relative z-10">
 

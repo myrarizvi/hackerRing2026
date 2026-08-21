@@ -32,11 +32,11 @@ export function AsciiFooter() {
   ];
 
   return (
-    <footer className="relative pt-16 pb-12 overflow-hidden font-mono text-xs">
+    <footer className="relative pt-10 sm:pt-16 pb-12 overflow-hidden font-mono text-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Sponsors Placeholder Strip */}
-        <div className="mb-16 pb-12 border-b border-[rgba(247,248,239,0.13)]">
+        <div className="mb-8 sm:mb-16 pb-6 sm:pb-12 border-b border-[rgba(247,248,239,0.13)]">
           <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-6 border-b border-[rgba(247,248,239,0.13)]">
             <span className="text-[#c7f85a] font-bold">// OUR SPONSORS & PARTNERS //</span>
             <span className="text-[#c8cfbd]">[SLOTS_OPEN_FOR_RESERVATION]</span>
@@ -46,7 +46,7 @@ export function AsciiFooter() {
             {sponsors.map((sp, idx) => (
               <div
                 key={idx}
-                className="border border-dashed border-[rgba(247,248,239,0.13)] bg-[#12140f]/60 p-4 h-24 rounded-[6px] flex flex-col items-center justify-center text-center group hover:border-[rgba(247,248,239,0.26)] hover:bg-[#181b14] transition-all duration-200"
+                className="border border-dashed border-[rgba(247,248,239,0.13)] bg-[#12140f]/60 p-4 min-h-24 rounded-[6px] flex flex-col items-center justify-center text-center group hover:border-[rgba(247,248,239,0.26)] hover:bg-[#181b14] transition-all duration-200"
               >
                 <div className="w-8 h-8 mb-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[4px] flex items-center justify-center text-[#aab1a2] group-hover:text-[#c7f85a] transition-colors">
                   <Building2 size={16} />
@@ -66,7 +66,7 @@ export function AsciiFooter() {
         </div>
 
         {/* ASCII Art Wordmark Display */}
-        <div className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 sm:p-8 mb-12 rounded-[8px] overflow-hidden text-center flex flex-col items-center">
+        <div className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 sm:p-8 mb-8 sm:mb-12 rounded-[8px] overflow-hidden text-center flex flex-col items-center">
           <div className="absolute top-2.5 left-3 text-[10px] text-[#aab1a2]">[ASCII_SYS_RENDER]</div>
           <div className="absolute top-2.5 right-3 text-[10px] text-[#aab1a2]">[PROMPTCOMPILER_V1]</div>
           

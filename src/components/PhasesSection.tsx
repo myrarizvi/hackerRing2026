@@ -34,11 +34,11 @@ export function PhasesSection() {
   ];
 
   return (
-    <section id="phases" className="py-16 sm:py-24 border-b border-[rgba(247,248,239,0.13)] relative">
+    <section id="phases" className="py-12 sm:py-24 border-b border-[rgba(247,248,239,0.13)] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10 pb-4 border-b border-[rgba(247,248,239,0.13)]">
           <div>
             <div className="text-[11px] font-mono text-[#aab1a2] tracking-widest uppercase mb-1">
               // EVALUATION STAGES //
