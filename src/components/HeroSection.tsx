@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { TiltCard } from "./TiltCard";
+import rvLogo from "../assets/logos/rv-logo.png";
+import startupLogo from "../assets/logos/startup-cell-logo.png";
+import gdgLogo from "../assets/logos/gdg-logo.png";
 
 const GLITCH_CHARS = "█▓▒░#$/@%&*+=~<>[]01";
 
@@ -137,23 +140,38 @@ export function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 w-full">
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_01]</span>
-                <p className="font-semibold text-[#f7f8ef] leading-snug">Department of Electronics & Communications Engineering</p>
+                <div className="flex items-center gap-3">
+                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_01]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug">Department of Electronics & Communications Engineering</p>
+                  </div>
+                </div>
               </div>
             </TiltCard>
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_02]</span>
-                <p className="font-semibold text-[#f7f8ef] leading-snug text-center">
-                  <span className="block">Department of CSE (AI/ML) Engineering</span>
-                  <span className="block">CSE Cluster </span>
-                </p>
+                <div className="flex items-center gap-3">
+                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_02]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug">
+                      <span className="block">Department of CSE (AI/ML) Engineering</span>
+                      <span className="block">CSE Cluster </span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </TiltCard>
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
-                <span className="text-[10px] text-[#aab1a2] block mb-1.5">[INSTITUTION]</span>
-                <p className="font-bold text-[#f7f8ef] leading-snug">RV Institute of Technology and Management</p>
+                <div className="flex items-center gap-3">
+                  <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[INSTITUTION]</span>
+                    <p className="font-bold text-[#f7f8ef] leading-snug">RV Institute of Technology and Management</p>
+                  </div>
+                </div>
               </div>
             </TiltCard>
           </div>
@@ -162,14 +180,24 @@ export function HeroSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto w-full">
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200 text-left">
-                <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_03]</span>
-                <p className="font-semibold text-[#f7f8ef] leading-snug">Startup Ignition Cell</p>
+                <div className="flex items-center gap-3">
+                  <img src={startupLogo} alt="Startup Ignition Cell logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_03]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug">Startup Ignition Cell</p>
+                  </div>
+                </div>
               </div>
             </TiltCard>
             <TiltCard>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 sm:p-4 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200 text-left">
-                <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_04]</span>
-                <p className="font-semibold text-[#f7f8ef] leading-snug">GDG RVITM</p>
+                <div className="flex items-center gap-3">
+                  <img src={gdgLogo} alt="GDG RVITM logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1.5">[ORGANIZER_04]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug">GDG RVITM</p>
+                  </div>
+                </div>
               </div>
             </TiltCard>
           </div>
