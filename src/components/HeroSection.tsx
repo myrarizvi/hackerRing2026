@@ -9,12 +9,12 @@ import gdgLogo from "../assets/logos/gdg-logo.png";
 const GLITCH_CHARS = "█▓▒░#$/@%&*+=~<>[]01";
 
 const ASCII_ART_LINES = [
-  "██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ████╗     ██████╗     ██████╗ ",
-  "██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔══╝     ╚════██╗   ██╔═████╗",
+  "██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ██████╗     ██████╗     ██████╗ ",
+  "██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔════╝     ╚════██╗   ██╔═████╗",
   "███████║███████║██║     █████╔╝ █████╗  ██████╔╝█████╗██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝   ██║██╔██║",
   "██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗╚════╝██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝    ████╔╝██║",
   "██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║      ██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗██╗╚██████╔╝",
-  "╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝",
+  "╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝ ",
 ];
 
 export function HeroSection() {
@@ -92,7 +92,7 @@ export function HeroSection() {
           {/* Animated ASCII Art Wordmark with Cyber Hover Scramble */}
           <div
             onMouseEnter={triggerScramble}
-            className="w-full overflow-x-auto py-1 flex justify-center cursor-pointer group/ascii"
+            className="w-full overflow-hidden py-1 flex justify-center items-center cursor-pointer group/ascii select-none"
             title="Hover to decrypt terminal signal"
           >
             <motion.pre
@@ -101,8 +101,13 @@ export function HeroSection() {
                   ? "0 0 20px rgba(199, 248, 90, 0.8), 0 0 30px rgba(199, 248, 90, 0.4)"
                   : "0 0 12px rgba(247, 248, 239, 0.2)",
               }}
-              className={`font-mono text-[5.5px] min-[360px]:text-[6.5px] xs:text-[8.5px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[18px] leading-tight text-[#f7f8ef] group-hover/ascii:text-[#c7f85a] inline-block select-none transition-all duration-150 warm-text-glow ${flicker ? "opacity-40 translate-x-[1px]" : "opacity-100"
-                }`}
+              style={{
+                fontSize: "clamp(4px, 1.35vw, 17px)",
+                lineHeight: "1.05",
+              }}
+              className={`font-mono text-[#f7f8ef] group-hover/ascii:text-[#c7f85a] inline-block select-none transition-all duration-150 warm-text-glow tracking-normal ${
+                flicker ? "opacity-40 translate-x-[1px]" : "opacity-100"
+              }`}
             >
               {lines.join("\n")}
             </motion.pre>

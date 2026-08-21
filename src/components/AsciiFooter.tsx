@@ -16,14 +16,12 @@ export function AsciiFooter() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const asciiArt = `
-██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ████╗     ██████╗     ██████╗ 
-██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔══╝     ╚════██╗   ██╔═████╗
+  const asciiArt = `██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗       ██████╗ ██╗███╗   ██╗ ██████╗     ██████╗     ██████╗ 
+██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗      ██╔══██╗██║████╗  ██║██╔════╝     ╚════██╗   ██╔═████╗
 ███████║███████║██║     █████╔╝ █████╗  ██████╔╝█████╗██████╔╝██║██╔██╗ ██║██║  ███╗     █████╔╝   ██║██╔██║
 ██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗╚════╝██╔══██╗██║██║╚██╗██║██║   ██║    ██╔═══╝    ████╔╝██║
 ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║      ██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗██╗╚██████╔╝
-╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝ 
-`;
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝ `;
 
   const sponsors = [
     { name: "RESERVED_SPONSOR_01", type: "TITLE SPONSOR" },
@@ -68,12 +66,16 @@ export function AsciiFooter() {
         </div>
 
         {/* ASCII Art Wordmark Display */}
-        <div className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 sm:p-8 mb-12 rounded-[8px] overflow-x-auto text-center">
+        <div className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 sm:p-8 mb-12 rounded-[8px] overflow-hidden text-center flex flex-col items-center">
           <div className="absolute top-2.5 left-3 text-[10px] text-[#aab1a2]">[ASCII_SYS_RENDER]</div>
           <div className="absolute top-2.5 right-3 text-[10px] text-[#aab1a2]">[PROMPTCOMPILER_V1]</div>
           
           <pre
-            className={`font-mono text-[6px] xs:text-[8px] sm:text-[10px] md:text-[12px] leading-tight text-[#f7f8ef] inline-block select-none transition-opacity duration-75 warm-text-glow ${
+            style={{
+              fontSize: "clamp(4px, 1.25vw, 13px)",
+              lineHeight: "1.05",
+            }}
+            className={`font-mono text-[#f7f8ef] inline-block select-none transition-opacity duration-75 warm-text-glow pt-4 ${
               flicker ? "opacity-40" : "opacity-100"
             }`}
           >
