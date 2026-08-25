@@ -3,9 +3,9 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { TiltCard } from "./TiltCard";
 import { Link } from "react-router-dom";
-import rvLogo from "../assets/logos/rv-logo.png";
-import startupLogo from "../assets/logos/startup-cell-logo.png";
-import gdgLogo from "../assets/logos/gdg-logo.png";
+import rvLogo from "../assets/logos/rv-logo.webp";
+import startupLogo from "../assets/logos/startup-cell-logo.webp";
+import gdgLogo from "../assets/logos/gdg-logo.webp";
 
 const GLITCH_CHARS = "█▓▒░#$/@%&*+=~<>[]01";
 

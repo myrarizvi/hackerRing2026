@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
-import { ArrowLeft, Plus, Trash2, Upload, User, Terminal } from "lucide-react";
+import { PAYMENT_URL } from "../constants";
+import { ArrowLeft, Plus, Trash2, Upload, User, Terminal, ExternalLink } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -37,6 +38,7 @@ function TerminalInput({
   label,
   value,
   onChange,
+  onBlur,
   type = "text",
   placeholder,
   error,
@@ -45,6 +47,7 @@ function TerminalInput({
   label: string;
   value: string;
   onChange: (v: string) => void;
+  onBlur?: () => void;
   type?: string;
   placeholder?: string;
   error?: string;
@@ -60,6 +63,7 @@ function TerminalInput({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onBlur={onBlur}
         placeholder={placeholder}
         className={`bg-[#181b14] border ${error
             ? "border-[#ff6f4e] focus:border-[#ff6f4e]"
@@ -83,6 +87,7 @@ function ParticipantBlock({
   onChange,
   onRemove,
   onResumeChange,
+  onPhoneBlur,
 }: {
   index: number;
   participant: Participant;
@@ -91,6 +96,7 @@ function ParticipantBlock({
   onChange: (field: keyof Omit<Participant, "id" | "resume">, value: string) => void;
   onRemove: () => void;
   onResumeChange: (file: File | null) => void;
+  onPhoneBlur: () => void;
 }) {
   return (
     <motion.div
@@ -132,7 +138,12 @@ function ParticipantBlock({
         <TerminalInput
           label="Phone"
           value={participant.phone}
-          onChange={(v) => onChange("phone", v)}
+          onChange={(v) => {
+            // Strip non-digits and cap at 10
+            const digits = v.replace(/\D/g, "").slice(0, 10);
+            onChange("phone", digits);
+          }}
+          onBlur={onPhoneBlur}
           type="tel"
           placeholder="e.g. +91 98765 43210"
           error={errors.phone}
@@ -172,7 +183,7 @@ function ParticipantBlock({
         <label className="font-mono text-[11px] text-[#aab1a2] tracking-widest uppercase flex items-center gap-1.5">
           <Upload size={11} className="text-[#aab1a2]" />
           Resume
-          <span className="text-[#4a5040] normal-case">(optional · PDF · max 2 MB)</span>
+          <span className="text-[#6b7566] normal-case">(optional · PDF · max 2 MB)</span>
         </label>
         <input
           type="file"
@@ -250,6 +261,21 @@ export function RegistrationPage() {
     });
   };
 
+  // ── Per-field blur validation for phone ──
+
+  const validatePhone = (id: number, phone: string) => {
+    const msg = !/^\d{10}$/.test(phone)
+      ? phone.trim() === "" ? "Required" : "Please enter a valid 10-digit phone number"
+      : undefined;
+    setErrors((prev) => ({
+      ...prev,
+      participants: {
+        ...prev.participants,
+        [id]: { ...prev.participants[id], phone: msg },
+      },
+    }));
+  };
+
   // ── Validation ──
 
   const validate = (): boolean => {
@@ -268,7 +294,10 @@ export function RegistrationPage() {
     participants.forEach((p) => {
       const pErrors: Partial<Record<keyof Omit<Participant, "id" | "resume">, string>> = {};
       if (!p.name.trim()) { pErrors.name = "Required"; valid = false; }
-      if (!p.phone.trim()) { pErrors.phone = "Required"; valid = false; }
+      if (!/^\d{10}$/.test(p.phone)) {
+        pErrors.phone = p.phone.trim() === "" ? "Required" : "Please enter a valid 10-digit phone number";
+        valid = false;
+      }
       if (!p.email.trim()) { pErrors.email = "Required"; valid = false; }
       else if (!/\S+@\S+\.\S+/.test(p.email)) {
         pErrors.email = "Invalid email"; valid = false;
@@ -379,22 +408,52 @@ export function RegistrationPage() {
           </p>
         </motion.div>
 
-        {/* Success state */}
+        {/* Payment confirmation state */}
         {submitted ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.35 }}
-            className="border border-[#c7f85a] bg-[#12140f] rounded-[8px] p-8 text-center space-y-4"
+            className="border border-[#c7f85a] bg-[#12140f] rounded-[8px] p-8 space-y-6"
           >
-            <div className="flex justify-center">
+            {/* Header */}
+            <div className="flex flex-col items-center gap-3 text-center">
               <Terminal size={32} className="text-[#c7f85a]" />
+              <div className="text-[#c7f85a] font-bold text-lg tracking-wider">
+                [ REGISTRATION_SAVED ]
+              </div>
             </div>
-            <div className="text-[#c7f85a] font-bold text-lg tracking-wider">[ REGISTRATION RECEIVED ]</div>
-            <p className="text-xs text-[#c8cfbd] leading-relaxed">
-              Your submission has been queued. The organizing team will reach out to your registered email shortly.
+
+            {/* Divider */}
+            <div className="border-t border-[rgba(247,248,239,0.13)]" />
+
+            {/* Body */}
+            <div className="space-y-2 text-center">
+              <p className="text-xs text-[#c8cfbd] leading-relaxed">
+                Your registration has been recorded. Complete the payment
+                to finalize your spot.
+              </p>
+              <p className="font-mono text-[10px] text-[#4a5040]">
+                // You will be redirected to an external portal — your data is
+                already saved //
+              </p>
+            </div>
+
+            {/* Payment CTA */}
+            <a
+              href={PAYMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full py-4 text-sm tracking-wider flex items-center justify-center gap-2"
+            >
+              <span>PROCEED TO PAYMENT</span>
+              <ExternalLink size={15} />
+            </a>
+
+            {/* Reassurance note */}
+            <p className="font-mono text-[10px] text-[#4a5040] text-center">
+              // Opens in a new tab — return here if you need to click again //
             </p>
-            
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} noValidate className="space-y-8">
@@ -456,6 +515,7 @@ export function RegistrationPage() {
                   onChange={(field, value) => updateParticipant(p.id, field, value)}
                   onRemove={() => removeParticipant(p.id)}
                   onResumeChange={(file) => updateResume(p.id, file)}
+                  onPhoneBlur={() => validatePhone(p.id, p.phone)}
                 />
               ))}
 
