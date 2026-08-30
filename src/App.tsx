@@ -64,14 +64,17 @@ export default function App() {
               </div>
 
               {/* Mobile Sticky Quick Register Action Bar */}
-              <div className="sm:hidden fixed bottom-3 left-3 right-3 z-40">
+              <div className="mobile-sticky-register sm:hidden fixed bottom-0 left-0 right-0 z-40 px-3 pt-2 bg-gradient-to-t from-[#050604] via-[#050604]/95 to-transparent">
                 <Link
                   to="/register"
-                  className="w-full btn-primary px-4 font-mono font-bold text-xs tracking-wider flex items-center justify-between shadow-2xl active:scale-95"
+                  className="w-full btn-primary min-h-[54px] px-4 font-mono font-bold flex items-center justify-between gap-3 shadow-2xl active:scale-[0.98]"
                 >
-                  <span>// REGISTER FOR Hacker-Ring 2.0 //</span>
-                  <span className="flex items-center gap-1 font-bold">
-                    JOIN NOW <ArrowUpRight size={14} />
+                  <span className="min-w-0 text-left leading-tight">
+                    <span className="block whitespace-nowrap text-[11px] tracking-wider">REGISTRATION OPEN</span>
+                    <span className="mt-0.5 block whitespace-nowrap text-[9px] font-semibold opacity-70">2–4 MEMBERS · NO FEE</span>
+                  </span>
+                  <span className="flex flex-shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-bold tracking-wide">
+                    JOIN NOW <ArrowUpRight size={15} />
                   </span>
                 </Link>
               </div>

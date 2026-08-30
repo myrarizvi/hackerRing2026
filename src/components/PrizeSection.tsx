@@ -62,16 +62,23 @@ export function PrizeSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative border border-[rgba(247,248,239,0.26)] bg-[#12140f] p-6 sm:p-12 text-center group overflow-hidden rounded-[8px] shadow-2xl"
+          className="relative border border-[rgba(247,248,239,0.26)] bg-[#12140f] px-4 pb-12 pt-14 sm:p-12 text-center group overflow-hidden rounded-[8px] shadow-2xl"
         >
           {/* Halftone texture overlay inside card */}
           <div className="absolute inset-0 dither-pattern opacity-20 pointer-events-none" />
 
           {/* Corner brackets */}
+<<<<<<< HEAD
           <div className="absolute top-2.5 left-3 font-mono text-xs text-[#aab1a2]">[0xPRIZE_VAULT]</div>
           <div className="absolute top-2.5 right-3 font-mono text-xs text-[#aab1a2]">[INR_CURRENCY]</div>
           <div className="absolute bottom-2.5 left-3 font-mono text-xs text-[#aab1a2]">[STATUS: COMMITTED]</div>
           <div className="absolute bottom-2.5 right-3 font-mono text-xs text-[#aab1a2]">[RVITM]</div>
+=======
+          <div className="absolute top-3 left-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[0xPRIZE_VAULT]</div>
+          <div className="absolute top-3 right-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[INR_CURRENCY]</div>
+          <div className="absolute bottom-3 left-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[STATUS: COMMITTED]</div>
+          <div className="absolute bottom-3 right-3 hidden min-[380px]:block font-mono text-[9px] sm:text-xs text-[#aab1a2]">[RVITM x VOICE AI SPACE]</div>
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
 
           <div className="relative z-10 max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center justify-center p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[8px] mb-2">
@@ -83,7 +90,10 @@ export function PrizeSection() {
             </div>
 
             {/* ASCII Art Prize Render from prizemoney.md */}
-            <div className="overflow-x-auto py-3 text-center">
+            <div className="sm:hidden py-3 font-display text-[clamp(2rem,12vw,3rem)] font-black tracking-[-0.06em] text-[#c7f85a] lime-text-glow">
+              ₹1,00,000
+            </div>
+            <div className="hidden sm:block overflow-x-auto py-3 text-center">
               <pre
                 className={`font-mono text-[5px] xs:text-[7px] sm:text-[9px] md:text-[11px] leading-tight text-[#c7f85a] inline-block select-none whitespace-pre transition-opacity duration-75 lime-text-glow ${flicker ? "opacity-40" : "opacity-100"
                   }`}
@@ -120,4 +130,3 @@ export function PrizeSection() {
     </section>
   );
 }
-

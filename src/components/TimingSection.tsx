@@ -39,7 +39,7 @@ export function TimingSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-6 sm:p-12 rounded-[8px] overflow-hidden group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
+          className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 min-[380px]:p-6 sm:p-12 rounded-[8px] overflow-hidden group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
         >
           {/* Background grid accents */}
           <div className="absolute top-0 right-0 p-4 font-mono text-xs text-[#aab1a2]/30 select-none hidden sm:block">
@@ -48,16 +48,16 @@ export function TimingSection() {
 
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] px-3 py-1 font-mono text-xs text-[#f7f8ef] rounded-[6px]">
+              <div className="inline-flex items-center gap-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] px-3 py-1.5 font-mono text-[10px] min-[380px]:text-xs text-[#f7f8ef] rounded-[6px]">
                 <Timer size={14} className="animate-spin text-[#c7f85a]" style={{ animationDuration: '6s' }} />
                 <span>CONTINUOUS OFFLINE MARATHON</span>
               </div>
 
               <div className="flex items-baseline gap-3">
-                <span className="text-6xl sm:text-8xl md:text-9xl font-black font-display text-[#f7f8ef] tracking-tighter leading-none warm-text-glow">
+                <span className="text-5xl min-[360px]:text-6xl sm:text-8xl md:text-9xl font-black font-display text-[#f7f8ef] tracking-tighter leading-none warm-text-glow">
                   <CountUpNumber end={36} duration={1800} />
                 </span>
-                <span className="text-3xl sm:text-5xl md:text-6xl font-black font-display text-[#f7f8ef] uppercase tracking-tight">
+                <span className="text-2xl min-[360px]:text-3xl sm:text-5xl md:text-6xl font-black font-display text-[#f7f8ef] uppercase tracking-tight">
                   HOURS
                 </span>
               </div>

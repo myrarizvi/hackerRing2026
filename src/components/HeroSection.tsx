@@ -137,7 +137,11 @@ export function HeroSection() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <section className="relative sm:min-h-[calc(100vh-4rem)] sm:min-h-[calc(100dvh-4rem)] flex flex-col justify-center pt-16 sm:pt-0 pb-12 sm:pb-0 overflow-hidden border-b border-[rgba(247,248,239,0.13)]">
+=======
+    <section className="relative sm:min-h-[calc(100vh-4rem)] sm:min-h-[calc(100dvh-4rem)] flex flex-col justify-between pt-20 sm:pt-16 pb-10 sm:pb-12 overflow-hidden border-b border-[rgba(247,248,239,0.13)]">
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
 
@@ -148,6 +152,14 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center text-center"
         >
+          <h1 className="sr-only">Hacker-Ring 2.0</h1>
+          <div className="sm:hidden w-full text-left">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[rgba(199,248,90,0.3)] bg-[#12140f]/80 px-3 py-1.5 text-[10px] font-bold tracking-[0.16em] text-[#c7f85a]">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#c7f85a]" />
+              36-HOUR NATIONAL HACKATHON
+            </div>
+          </div>
+
           {/* Animated ASCII Art Wordmark with Cyber Hover Scramble */}
           <div
             onMouseEnter={triggerScramble}
@@ -161,7 +173,7 @@ export function HeroSection() {
                   : "0 0 12px rgba(247, 248, 239, 0.2)",
               }}
               style={{
-                fontSize: "clamp(4px, 1.35vw, 17px)",
+                fontSize: "clamp(3px, 1.12vw, 17px)",
                 lineHeight: "1.05",
               }}
               className={`font-mono text-[#f7f8ef] group-hover/ascii:text-[#c7f85a] inline-block select-none transition-all duration-150 warm-text-glow tracking-normal ${
@@ -172,6 +184,7 @@ export function HeroSection() {
             </motion.pre>
           </div>
 
+<<<<<<< HEAD
           {/* Tagline — typewriter with blinking cursor */}
           <div className="mt-6 sm:mt-8 font-mono text-base sm:text-xl md:text-2xl tracking-[0.25em] uppercase text-[#c7f85a] select-none" aria-label="HACK. BUILD. WIN.">
             <span className="opacity-60">// </span>
@@ -186,6 +199,15 @@ export function HeroSection() {
 
           {/* Action Buttons */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto px-2">
+=======
+          <p className="sm:hidden max-w-2xl text-left font-mono text-xs leading-relaxed text-[#c8cfbd]">
+            Build bold hardware and software ideas in a 36-hour sprint at RVITM, Bengaluru.
+            Compete for a <span className="font-bold text-[#c7f85a]">₹1,00,000 prize pool</span> with a team of 2–4.
+          </p>
+
+          {/* Action Buttons Section */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1 w-full sm:w-auto">
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
             <Link
               to="/register"
               className="w-full sm:w-auto btn-primary px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2.5 group"
@@ -203,6 +225,83 @@ export function HeroSection() {
           </div>
         </motion.div>
 
+<<<<<<< HEAD
+=======
+        {/* Organizing Departments & College Info Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-col gap-2.5 pt-4 pb-2 font-mono text-xs text-[#c8cfbd] w-full"
+        >
+          {/* Host Institution — compact, centered, visually distinct */}
+          <div className="flex justify-center">
+            <TiltCard className="w-full sm:w-auto">
+              <div className="border border-[rgba(199,248,90,0.25)] bg-[#141710] px-3 sm:px-4 py-2.5 rounded-[8px] flex items-center gap-3 relative group hover:bg-[#191e0f] hover:border-[rgba(199,248,90,0.4)] transition-all duration-200">
+                <img src={rvLogo} alt="RV Institute of Technology and Management logo" className="w-10 h-10 object-contain flex-shrink-0" />
+                <div className="min-w-0">
+                  <span className="text-[10px] text-[#c7f85a] tracking-widest uppercase block mb-0.5">[HOST_INSTITUTION]</span>
+                  <p className="font-bold text-[#f7f8ef] leading-snug text-xs min-[380px]:text-sm">RV Institute of Technology and Management</p>
+                </div>
+              </div>
+            </TiltCard>
+          </div>
+
+          {/* Section label */}
+          <div className="text-[10px] font-mono text-[#aab1a2] tracking-widest uppercase text-center pt-0.5">
+            // ORGANIZING_UNITS //
+          </div>
+
+          {/* 4-card grid — all organizers in one row */}
+          <div className="grid grid-cols-1 min-[370px]:grid-cols-2 lg:grid-cols-4 gap-2.5 w-full">
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={rvLogo} alt="ECE Department logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_01]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Dept. of Electronics &amp; Communications Engineering</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={rvLogo} alt="CSE AI/ML Department logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_02]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Dept. of CSE (AI/ML) Engineering</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={startupLogo} alt="Startup Ignition Cell logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_03]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">Startup Ignition Cell</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+            <TiltCard>
+              <div className="border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-3 rounded-[8px] h-full flex flex-col justify-between relative group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200">
+                <div className="flex items-center gap-2.5">
+                  <img src={gdgLogo} alt="GDG RVITM logo" className="w-9 h-9 object-contain flex-shrink-0" />
+                  <div>
+                    <span className="text-[10px] text-[#aab1a2] block mb-1">[ORGANIZER_04]</span>
+                    <p className="font-semibold text-[#f7f8ef] leading-snug text-[11px]">GDG RVITM</p>
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+          </div>
+        </motion.div>
+
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
       </div>
     </section>
   );

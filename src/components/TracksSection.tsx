@@ -77,7 +77,11 @@ export function TracksSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 whileHover={{ y: -4 }}
+<<<<<<< HEAD
                 className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-5 sm:p-6 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
+=======
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 min-[380px]:p-5 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
               >
                 {/* Visual Corner Brackets */}
                 <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[rgba(247,248,239,0.26)] rounded-tl-[7px]" />
@@ -87,18 +91,23 @@ export function TracksSection() {
 
                 <div>
                   {/* Top Bar */}
-                  <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
+                  <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
                     <span className="text-[#c7f85a] font-bold">[{track.code}]</span>
                     <span className="text-[11px] text-[#c8cfbd] uppercase">// ACTIVE DIVISION //</span>
                   </div>
 
                   {/* Icon & Title */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px] group-hover:border-[rgba(247,248,239,0.26)] transition-colors">
+                  <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                    <div className="flex-shrink-0 p-2.5 sm:p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px] group-hover:border-[rgba(247,248,239,0.26)] transition-colors">
                       <Icon size={28} className={accentColor} />
                     </div>
+<<<<<<< HEAD
                     <div>
                       <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
+=======
+                    <div className="min-w-0">
+                      <h3 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight">
+>>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
                         {track.title}
                       </h3>
                       <p className="font-mono text-xs text-[#aab1a2] mt-1">
@@ -129,7 +138,7 @@ export function TracksSection() {
                 </div>
 
                 {/* Bottom Spec Footer */}
-                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] flex items-center justify-between font-mono text-[11px] text-[#aab1a2]">
+                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] flex flex-col min-[430px]:flex-row min-[430px]:items-center justify-between gap-2 font-mono text-[11px] text-[#aab1a2]">
                   <span>ELIGIBILITY: OPEN TO ALL</span>
                   <Link to="/register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</Link>
                 </div>

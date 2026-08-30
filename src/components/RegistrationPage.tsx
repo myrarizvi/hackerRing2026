@@ -104,10 +104,10 @@ function ParticipantBlock({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.25 }}
-      className="relative border border-[rgba(247,248,239,0.18)] bg-[#12140f] rounded-[8px] p-5 sm:p-6 space-y-4"
+      className="relative border border-[rgba(247,248,239,0.18)] bg-[#12140f] rounded-[8px] p-4 min-[380px]:p-5 sm:p-6 space-y-4"
     >
       {/* Block header */}
-      <div className="flex items-center justify-between pb-3 border-b border-[rgba(247,248,239,0.10)]">
+      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[rgba(247,248,239,0.10)]">
         <div className="flex items-center gap-2 font-mono text-xs text-[#c8cfbd]">
           <User size={13} className="text-[#c7f85a]" />
           <span className="text-[#aab1a2]">[PARTICIPANT_{String(index + 1).padStart(2, "0")}]</span>
@@ -180,7 +180,7 @@ function ParticipantBlock({
 
       {/* Resume upload */}
       <div className="flex flex-col gap-1 pt-1">
-        <label className="font-mono text-[11px] text-[#aab1a2] tracking-widest uppercase flex items-center gap-1.5">
+        <label className="font-mono text-[11px] text-[#aab1a2] tracking-widest uppercase flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
           <Upload size={11} className="text-[#aab1a2]" />
           Resume
           <span className="text-[#6b7566] normal-case">(optional · PDF · max 2 MB)</span>
@@ -189,7 +189,7 @@ function ParticipantBlock({
           type="file"
           accept=".pdf"
           onChange={(e) => onResumeChange(e.target.files?.[0] ?? null)}
-          className="bg-[#181b14] border border-[rgba(247,248,239,0.18)] rounded-[6px] px-3 py-2 font-mono text-xs text-[#c8cfbd] outline-none transition-colors duration-150 w-full file:mr-3 file:py-1 file:px-3 file:rounded-[4px] file:border file:border-[rgba(247,248,239,0.26)] file:bg-[#12140f] file:text-[#f7f8ef] file:font-mono file:text-[11px] file:cursor-pointer hover:border-[rgba(247,248,239,0.35)] cursor-pointer"
+          className="bg-[#181b14] border border-[rgba(247,248,239,0.18)] rounded-[6px] px-2 sm:px-3 py-2 font-mono text-xs text-[#c8cfbd] outline-none transition-colors duration-150 w-full file:mr-2 sm:file:mr-3 file:py-1 file:px-2 sm:file:px-3 file:rounded-[4px] file:border file:border-[rgba(247,248,239,0.26)] file:bg-[#12140f] file:text-[#f7f8ef] file:font-mono file:text-[11px] file:cursor-pointer hover:border-[rgba(247,248,239,0.35)] cursor-pointer"
         />
         {participant.resume && (
           <span className="font-mono text-[10px] text-[#c7f85a]">
@@ -375,14 +375,14 @@ export function RegistrationPage() {
   // ── Render ──
 
   return (
-    <div className="relative z-20 min-h-screen pt-20 pb-20 px-4 sm:px-6 font-mono">
+    <div className="relative z-20 min-h-screen pt-20 pb-20 px-3 min-[360px]:px-4 sm:px-6 font-mono">
       <div className="max-w-3xl mx-auto">
 
         {/* Back nav */}
         <div className="mb-6">
           <Link
             to="/"
-            className="group inline-flex items-center gap-2.5 font-mono text-[#c7f85a] border border-[rgba(199,248,90,0.35)] bg-[#12140f]/80 hover:bg-[#141a0d] hover:border-[rgba(199,248,90,0.65)] hover:shadow-[0_0_12px_rgba(199,248,90,0.12)] px-4 py-2.5 rounded-[6px] transition-all duration-200 text-[15px] tracking-wide"
+            className="group inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2.5 font-mono text-[#c7f85a] border border-[rgba(199,248,90,0.35)] bg-[#12140f]/80 hover:bg-[#141a0d] hover:border-[rgba(199,248,90,0.65)] hover:shadow-[0_0_12px_rgba(199,248,90,0.12)] px-4 py-2.5 rounded-[6px] transition-all duration-200 text-xs min-[380px]:text-sm sm:text-[15px] tracking-wide"
           >
             <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1 flex-shrink-0" />
             <span>RETURN TO MAIN TERMINAL</span>
@@ -394,12 +394,12 @@ export function RegistrationPage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mb-10 pb-6 border-b border-[rgba(247,248,239,0.13)]"
+          className="mb-8 sm:mb-10 pb-6 border-b border-[rgba(247,248,239,0.13)]"
         >
           <div className="text-[11px] text-[#aab1a2] tracking-widest uppercase mb-2">
             // AUTHENTICATION &amp; ACCESS //
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
+          <h1 className="text-[1.7rem] min-[360px]:text-3xl sm:text-4xl font-black font-display text-[#f7f8ef] tracking-tight uppercase">
             TEAM REGISTRATION
           </h1>
           <p className="text-xs text-[#c8cfbd] mt-2 leading-relaxed">
@@ -456,14 +456,14 @@ export function RegistrationPage() {
             </p>
           </motion.div>
         ) : (
-          <form onSubmit={handleSubmit} noValidate className="space-y-8">
+          <form onSubmit={handleSubmit} noValidate className="space-y-6 sm:space-y-8">
 
             {/* Team info */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: 0.05 }}
-              className="border border-[rgba(247,248,239,0.18)] bg-[#12140f] rounded-[8px] p-5 sm:p-6 space-y-4"
+              className="border border-[rgba(247,248,239,0.18)] bg-[#12140f] rounded-[8px] p-4 min-[380px]:p-5 sm:p-6 space-y-4"
             >
               <div className="text-[11px] text-[#aab1a2] tracking-widest uppercase pb-3 border-b border-[rgba(247,248,239,0.10)]">
                 [TEAM_INFO]

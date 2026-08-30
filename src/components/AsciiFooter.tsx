@@ -32,12 +32,12 @@ export function AsciiFooter() {
   ];
 
   return (
-    <footer className="relative pt-10 sm:pt-16 pb-12 overflow-hidden font-mono text-xs">
+    <footer className="relative pt-10 sm:pt-16 pb-28 sm:pb-12 overflow-hidden font-mono text-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Sponsors Placeholder Strip */}
         <div className="mb-8 sm:mb-16 pb-6 sm:pb-12 border-b border-[rgba(247,248,239,0.13)]">
-          <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-6 border-b border-[rgba(247,248,239,0.13)]">
+          <div className="flex flex-col min-[430px]:flex-row min-[430px]:items-center justify-between gap-2 font-mono text-xs text-[#aab1a2] pb-3 mb-6 border-b border-[rgba(247,248,239,0.13)]">
             <span className="text-[#c7f85a] font-bold">// OUR SPONSORS & PARTNERS //</span>
             <span className="text-[#c8cfbd]">[SLOTS_OPEN_FOR_RESERVATION]</span>
           </div>
@@ -70,12 +70,15 @@ export function AsciiFooter() {
           <div className="absolute top-2.5 left-3 text-[10px] text-[#aab1a2]">[ASCII_SYS_RENDER]</div>
           <div className="absolute top-2.5 right-3 text-[10px] text-[#aab1a2]">[PROMPTCOMPILER_V1]</div>
           
+          <div className="sm:hidden pt-5 font-display text-3xl min-[380px]:text-4xl font-black leading-none tracking-[-0.05em] text-[#f7f8ef]">
+            HACKER-RING <span className="metallic-lime-text">2.0</span>
+          </div>
           <pre
             style={{
               fontSize: "clamp(4px, 1.25vw, 13px)",
               lineHeight: "1.05",
             }}
-            className={`font-mono text-[#f7f8ef] inline-block select-none transition-opacity duration-75 warm-text-glow pt-4 ${
+            className={`hidden sm:inline-block font-mono text-[#f7f8ef] select-none transition-opacity duration-75 warm-text-glow pt-4 ${
               flicker ? "opacity-40" : "opacity-100"
             }`}
           >

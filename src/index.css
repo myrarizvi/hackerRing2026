@@ -32,6 +32,19 @@
     font-family: var(--font-mono);
     background-color: #080907;
     color: #f7f8ef;
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
   }
 
   ::selection {
@@ -41,6 +54,43 @@
 
   h1, h2, h3, .font-display {
     font-family: var(--font-display);
+  }
+}
+
+.mobile-sticky-register {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 639px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .nav-glass-panel {
+    background-color: rgba(12, 14, 10, 0.94);
+  }
+}
+
+@media (hover: none) {
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -216,4 +266,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(247, 248, 239, 0.26);
 }
-

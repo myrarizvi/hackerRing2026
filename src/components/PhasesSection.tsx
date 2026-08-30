@@ -75,19 +75,19 @@ export function PhasesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-6 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 min-[380px]:p-5 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 {/* Top badges */}
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
+                  <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
                     <span className="text-[#c7f85a] font-bold">{phase.round}</span>
                     <span className="px-2.5 py-0.5 border border-[rgba(247,248,239,0.13)] bg-[#181b14] text-[10px] text-[#c8cfbd] font-mono rounded-[4px]">
                       {phase.mode}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px]">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="flex-shrink-0 p-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px]">
                       <Icon size={22} className={accentColor} />
                     </div>
                     <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
@@ -114,7 +114,7 @@ export function PhasesSection() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] font-mono text-[11px] text-[#aab1a2] flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] font-mono text-[11px] text-[#aab1a2] flex flex-col min-[430px]:flex-row min-[430px]:items-center justify-between gap-2">
                   <span>{phase.duration}</span>
                   <span className="text-[#0f8c7f] font-bold">[VERIFIED]</span>
                 </div>

@@ -43,7 +43,7 @@ export function RegisterSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative border border-[rgba(247,248,239,0.26)] bg-[#12140f] p-6 sm:p-10 lg:p-12 rounded-[8px] overflow-hidden shadow-2xl"
+          className="relative border border-[rgba(247,248,239,0.26)] bg-[#12140f] px-4 pb-6 pt-12 min-[380px]:px-6 sm:p-10 lg:p-12 rounded-[8px] overflow-hidden shadow-2xl"
         >
           {/* Subtle Dither background */}
           <div className="absolute inset-0 dither-pattern opacity-25 pointer-events-none" />
@@ -77,9 +77,9 @@ export function RegisterSection() {
             {/* CTA */}
             <Link
               to="/register"
-              className="btn-primary px-8 py-4 text-sm sm:text-base tracking-wider flex items-center justify-center gap-2"
+              className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-sm sm:text-base tracking-wider flex items-center justify-center gap-2"
             >
-              <span>[REGISTER NOW →]</span>
+              <span>[REGISTER NOW]</span>
               <ArrowUpRight size={20} />
             </Link>
           </div>

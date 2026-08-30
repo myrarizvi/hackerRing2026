@@ -127,9 +127,9 @@ export function SupportSection() {
         </div>
 
         {/* Support Helpdesk Notice */}
-        <div className="mt-8 p-4 border border-[rgba(247,248,239,0.13)] bg-[#12140f] rounded-[8px] flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-[#c8cfbd] gap-3">
-          <div className="flex items-center gap-2">
-            <span className="text-[#c7f85a] font-bold">&gt;</span>
+        <div className="mt-8 p-4 border border-[rgba(247,248,239,0.13)] bg-[#12140f] rounded-[8px] flex flex-col sm:flex-row items-start sm:items-center justify-between font-mono text-xs text-[#c8cfbd] gap-3">
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 flex-shrink-0 text-[#c7f85a] font-bold">&gt;</span>
             <span>FOR QUERIES ON REGISTRATIONS, HARDWARE REQUISITIONS, OR ACCOMMODATION: REACH OUT DIRECTLY.</span>
           </div>
           <span className="text-[#aab1a2] text-[10px]">[RESPONSE TIME: &lt; 2 HRS]</span>
