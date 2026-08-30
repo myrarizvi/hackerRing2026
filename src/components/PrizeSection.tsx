@@ -71,7 +71,7 @@ export function PrizeSection() {
           <div className="absolute top-2.5 left-3 font-mono text-xs text-[#aab1a2]">[0xPRIZE_VAULT]</div>
           <div className="absolute top-2.5 right-3 font-mono text-xs text-[#aab1a2]">[INR_CURRENCY]</div>
           <div className="absolute bottom-2.5 left-3 font-mono text-xs text-[#aab1a2]">[STATUS: COMMITTED]</div>
-          <div className="absolute bottom-2.5 right-3 font-mono text-xs text-[#aab1a2]">[RVITM x VOICE AI SPACE]</div>
+          <div className="absolute bottom-2.5 right-3 font-mono text-xs text-[#aab1a2]">[RVITM]</div>
 
           <div className="relative z-10 max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center justify-center p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[8px] mb-2">
@@ -93,24 +93,24 @@ export function PrizeSection() {
             </div>
 
             <p className="text-sm sm:text-base font-mono text-[#c8cfbd] max-w-lg mx-auto pt-2">
-              <span className="text-[#c7f85a] font-bold">₹1,00,000</span> Total Prize Pool across Hardware & Software Tracks.
+              <span className="text-[#c7f85a] font-bold">₹1,00,000</span> Total Prize Pool across all Tracks.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 font-mono text-xs text-left">
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 01 //</span>
-                <div className="font-bold text-[#f7f8ef]"> Hardware</div>
-                <div className="text-[#aab1a2] text-[11px] mt-1">Cash Bounties + Mentorship</div>
+                <div className="font-bold text-[#f7f8ef]"> Voice AI</div>
+                <div className="text-[#aab1a2] text-[11px] mt-1"></div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 02 //</span>
-                <div className="font-bold text-[#f7f8ef]">Software</div>
-                <div className="text-[#aab1a2] text-[11px] mt-1">Cash Bounties + Deployment Grants</div>
+                <div className="font-bold text-[#f7f8ef]">Agentic AI</div>
+                <div className="text-[#aab1a2] text-[11px] mt-1"></div>
               </div>
               <div className="border border-[rgba(247,248,239,0.13)] bg-[#181b14] p-3.5 rounded-[6px] hover:border-[rgba(247,248,239,0.26)] transition-all">
                 <span className="text-[10px] text-[#aab1a2] block mb-0.5">// TRACK 03 //</span>
-                <div className="font-bold text-[#f7f8ef]"> AR / VR & IMMERSIVE TECH</div>
-                <div className="text-[#aab1a2] text-[11px] mt-1">Direct Industry Incubation</div>
+                <div className="font-bold text-[#f7f8ef]">Open Track</div>
+                <div className="text-[#aab1a2] text-[11px] mt-1"></div>
               </div>
             </div>
           </div>

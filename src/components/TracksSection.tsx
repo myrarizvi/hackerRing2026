@@ -1,28 +1,35 @@
 import { motion } from "motion/react";
-import { Cpu, Code2, Microchip, Layers, Radio, Sparkles, Terminal, Activity } from "lucide-react";
+import { Cpu, Radio, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function TracksSection() {
   const tracks = [
     {
       code: "TRK_01",
-      title: "Hardware",
-      icon: Cpu,
-      subtitle: "Embedded Speech & Edge Audio Architectures",
+      title: "Voice AI",
+      icon: Radio,
+      subtitle: "Speech Intelligence, Conversational AI & Voice Experiences",
       description:
-        "Engineered for hardware innovators building dedicated voice micro-controllers, low-power DSP interfaces, smart acoustic arrays, custom IoT edge devices, or tactile physical voice interfaces.",
-      keywords: ["Edge DSP", "Microcontrollers", "Acoustic Arrays", "Whisper on Edge", "ESP32 / Pi / FPGA", "Custom PCBs"],
-      promptIdea: "Build low-latency physical voice devices, smart ambient hardware, or wearable assistive speech units.",
+        "Build intelligent voice-powered solutions that understand, process, and respond to human speech — covering speech recognition, voice assistants, multilingual experiences, and audio applications.",
+      keywords: ["Speech Recognition", "Conversational AI", "STT / TTS", "Voice Agents", "Multilingual AI", "Audio Intelligence"],
     },
     {
       code: "TRK_02",
-      title: "Software",
-      icon: Code2,
-      subtitle: "Full-Stack Speech AI, LLM Voice Agents & Audio Pipelines",
+      title: "Agentic AI",
+      icon: Cpu,
+      subtitle: "Autonomous Agents, Intelligent Workflows & AI Systems",
       description:
-        "Engineered for software developers building ultra-low-latency real-time voice agents, multilingual translation pipelines, synthesized emotional voice cloning, neural audio engines, or conversational applications.",
-      keywords: ["Real-time LLM Agents", "STT / TTS Pipelines", "Voice Cloning", "Audio Multimodal", "Conversational AI", "WebSockets / WebRTC"],
-      promptIdea: "Build autonomous voice agents, multi-turn phone assistants, healthcare transcription, or vocal accessibility platforms.",
+        "Build AI systems that reason, plan, and act to solve real-world problems — from autonomous agents and multi-agent pipelines to tool use, intelligent workflows, and LLM-driven decision making.",
+      keywords: ["AI Agents", "Multi-Agent Systems", "Tool Calling", "Autonomous Workflows", "LLM Reasoning", "AI Automation"],
+    },
+    {
+      code: "TRK_03",
+      title: "Open Track",
+      icon: Sparkles,
+      subtitle: "Creative Solutions, Emerging Technology & Real-World Impact",
+      description:
+        "Have an idea that doesn't fit a category? Pick a problem that matters and build a technology-driven solution using whatever tools and approaches work best for you.",
+      keywords: ["Web / Mobile", "AI / ML", "IoT & Hardware", "Cybersecurity", "Cloud & APIs", "Emerging Tech"],
     },
   ];
 
@@ -52,15 +59,16 @@ export function TracksSection() {
             </h2>
           </div>
           <div className="font-mono text-xs text-[#c8cfbd]">
-            [HARDWARE & SOFTWARE DOMAINS]
+            [THREE ACTIVE TRACKS]
           </div>
         </div>
 
         {/* Tracks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {tracks.map((track, idx) => {
             const Icon = track.icon;
-            const accentColor = idx === 0 ? "text-[#0f8c7f]" : "text-[#3f8cff]";
+            const accentColors = ["text-[#0f8c7f]", "text-[#3f8cff]", "text-[#c7f85a]"];
+            const accentColor = accentColors[idx] ?? "text-[#c7f85a]";
             return (
               <motion.div
                 key={track.code}
@@ -69,7 +77,7 @@ export function TracksSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 whileHover={{ y: -4 }}
-                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-6 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-5 sm:p-6 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 {/* Visual Corner Brackets */}
                 <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[rgba(247,248,239,0.26)] rounded-tl-[7px]" />
@@ -90,7 +98,7 @@ export function TracksSection() {
                       <Icon size={28} className={accentColor} />
                     </div>
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
                         {track.title}
                       </h3>
                       <p className="font-mono text-xs text-[#aab1a2] mt-1">
@@ -100,7 +108,7 @@ export function TracksSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] leading-relaxed my-4">
+                  <p className="font-mono text-xs text-[#c8cfbd] leading-relaxed my-4">
                     {track.description}
                   </p>
 

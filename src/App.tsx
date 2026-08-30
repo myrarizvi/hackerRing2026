@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
+import { OrganizingUnitsSection } from "@/components/OrganizingUnitsSection";
 import { KeyDatesSection } from "@/components/KeyDatesSection";
 import { PrizeSection } from "@/components/PrizeSection";
 import { TracksSection } from "@/components/TracksSection";
@@ -12,22 +12,12 @@ import { RegisterSection } from "@/components/RegisterSection";
 import { SupportSection } from "@/components/SupportSection";
 import { AsciiFooter } from "@/components/AsciiFooter";
 import { NotFoundPage } from "@/components/NotFoundPage";
-import { LoadingOverlay } from "@/components/LoadingOverlay";
 import { RegistrationPage } from "@/components/RegistrationPage";
 import { ArrowUpRight } from "lucide-react";
 
-
-
-
-
 export default function App() {
-  const [transitionKey] = useState<number>(Date.now());
-
   return (
     <div className="relative min-h-screen bg-[#080907] bg-workbench-gradient text-[#f7f8ef] font-mono selection:bg-[#c7f85a] selection:text-[#10120f] overflow-x-hidden">
-      {/* Full-screen Hot Pink Curtain Split Transition Overlay */}
-      <LoadingOverlay triggerKey={transitionKey} />
-
       {/* Background grid overlay using rgba(247, 248, 239, 0.045) */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay opacity-80" />
 
@@ -58,6 +48,7 @@ export default function App() {
               {/* Main Single-page Content Flow */}
               <main className="relative z-20">
                 <HeroSection />
+                <OrganizingUnitsSection />
                 <KeyDatesSection />
                 <PrizeSection />
                 <TracksSection />

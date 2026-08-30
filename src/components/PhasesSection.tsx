@@ -9,11 +9,11 @@ export function PhasesSection() {
       mode: "VIRTUAL / REMOTE",
       duration: "Concept & Prototype Evaluation",
       description:
-        "Initial competitive screening. Teams submit system architectures, problem statements, and prototype proof-of-concept videos online for evaluation by the jury panel.",
+        "Kickstart your HackeRing journey with an engaging first round designed to explore your ideas, creativity, and technical understanding. The format may vary depending on your chosen track, with participants taking on a short assessment, sharing their ideas, or responding to questions related to their chosen domain.",
       deliverables: [
-        "System Architecture Design & Flowcharts",
-        "Repository / Prototype Codebase",
-        "3-Minute Video Pitch & Demo",
+        "Track-based Assessment / Quiz",
+        "Idea or PPT Submission",
+        "Technical Questions & Evaluation",
       ],
       icon: Globe,
     },
