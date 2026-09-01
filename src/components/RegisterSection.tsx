@@ -74,8 +74,8 @@ export function RegisterSection() {
               <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> Round 2 Fee: <strong className="text-[#f7f8ef]">₹600</strong> (Additional for Shortlisted Teams)</div>
             </div>
 
-            <div className="flex items-center gap-2 font-mono text-[11px] text-[#c8cfbd] bg-[#181b14] border border-[rgba(247,248,239,0.13)] px-3 py-2 rounded-[6px] w-full">
-              <span className="text-[#c7f85a] font-bold">[ROUND 2 VENUE]</span>
+            <div className="flex flex-col min-[430px]:flex-row min-[430px]:items-center gap-1.5 min-[430px]:gap-2 font-mono text-[11px] text-[#c8cfbd] bg-[#181b14] border border-[rgba(247,248,239,0.13)] px-3 py-2 rounded-[6px] w-full">
+              <span className="text-[#c7f85a] font-bold flex-shrink-0">[ROUND 2 VENUE]</span>
               <a
                 href="https://share.google/9h9nFLWiZuUwD1DwN"
                 target="_blank"

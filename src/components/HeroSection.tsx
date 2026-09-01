@@ -149,9 +149,13 @@ export function HeroSection() {
         >
           <h1 className="sr-only">Hacker-Ring 2.0</h1>
           <div className="w-full text-center mb-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(199,248,90,0.3)] bg-[#12140f]/80 px-3 py-1.5 text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#c7f85a]">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#c7f85a]" />
-              36-HOUR NATIONAL HACKATHON // RVITM JP NAGAR 8TH PHASE
+            <div className="inline-flex max-w-full items-stretch border border-[rgba(199,248,90,0.3)] border-l-2 border-l-[#c7f85a] bg-[#12140f]/80 text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#c7f85a] shadow-[inset_0_1px_0_rgba(247,248,239,0.06)]">
+              <span className="flex items-center border-r border-[rgba(199,248,90,0.2)] bg-[#c7f85a]/10 px-2" aria-hidden="true">
+                <span className="h-1.5 w-1.5 animate-pulse bg-[#c7f85a]" />
+              </span>
+              <span className="px-3 py-1.5">
+                36-HOUR NATIONAL HACKATHON // RVITM JP NAGAR 8TH PHASE
+              </span>
             </div>
           </div>
 

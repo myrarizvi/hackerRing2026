@@ -33,7 +33,7 @@ export function NotFoundPage() {
     <div className="min-h-screen flex flex-col justify-between py-12 px-4 sm:px-6 font-mono text-[#f7f8ef] relative z-20">
       
       {/* Top Bar Header */}
-      <div className="max-w-5xl mx-auto w-full flex items-center justify-between border-b border-[rgba(247,248,239,0.13)] pb-4 mb-8">
+      <div className="max-w-5xl mx-auto w-full flex flex-col min-[560px]:flex-row min-[560px]:items-center justify-between gap-2 border-b border-[rgba(247,248,239,0.13)] pb-4 mb-8">
         <div className="flex items-center gap-2 text-xs text-[#aab1a2]">
           <Terminal size={14} className="text-[#ff6f4e]" />
           <span>// TERMINAL_DIAGNOSTICS //</span>
@@ -80,7 +80,7 @@ export function NotFoundPage() {
                 <p><span className="text-[#0f8c7f]">&gt; RECOMMENDATION:</span> Reroute navigation back to primary index protocol.</p>
               </div>
 
-              <div className="pt-2 border-t border-[rgba(247,248,239,0.08)] text-[10px] text-[#aab1a2] flex justify-between">
+              <div className="pt-2 border-t border-[rgba(247,248,239,0.08)] text-[10px] text-[#aab1a2] flex flex-col min-[430px]:flex-row min-[430px]:justify-between gap-1">
                 <span>PING_LATENCY: {pingTime}ms</span>
                 <span>PROTOCOL: HTTP/2_TERMINAL</span>
               </div>

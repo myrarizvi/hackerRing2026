@@ -67,13 +67,13 @@ export default function App() {
               <div className="mobile-sticky-register sm:hidden fixed bottom-0 left-0 right-0 z-40 px-3 pt-2 bg-gradient-to-t from-[#050604] via-[#050604]/95 to-transparent">
                 <Link
                   to="/register"
-                  className="w-full btn-primary min-h-[54px] px-4 font-mono font-bold flex items-center justify-between gap-3 shadow-2xl active:scale-[0.98]"
+                  className="w-full btn-primary min-h-[54px] px-4 font-mono font-bold flex max-[359px]:flex-col max-[359px]:items-stretch items-center justify-between gap-3 max-[359px]:gap-1.5 shadow-2xl active:scale-[0.98]"
                 >
                   <span className="min-w-0 text-left leading-tight">
                     <span className="block whitespace-nowrap text-[11px] tracking-wider">REGISTRATION OPEN</span>
                     <span className="mt-0.5 block whitespace-nowrap text-[9px] font-semibold opacity-80">2–4 MEMBERS · ₹200 (R1) · ₹600 (R2)</span>
                   </span>
-                  <span className="flex flex-shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-bold tracking-wide">
+                  <span className="flex flex-shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-bold tracking-wide max-[359px]:self-end">
                     JOIN NOW <ArrowUpRight size={15} />
                   </span>
                 </Link>
