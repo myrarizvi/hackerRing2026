@@ -67,18 +67,10 @@ export function PrizeSection() {
           {/* Halftone texture overlay inside card */}
           <div className="absolute inset-0 dither-pattern opacity-20 pointer-events-none" />
 
-          {/* Corner brackets */}
-<<<<<<< HEAD
-          <div className="absolute top-2.5 left-3 font-mono text-xs text-[#aab1a2]">[0xPRIZE_VAULT]</div>
-          <div className="absolute top-2.5 right-3 font-mono text-xs text-[#aab1a2]">[INR_CURRENCY]</div>
-          <div className="absolute bottom-2.5 left-3 font-mono text-xs text-[#aab1a2]">[STATUS: COMMITTED]</div>
-          <div className="absolute bottom-2.5 right-3 font-mono text-xs text-[#aab1a2]">[RVITM]</div>
-=======
           <div className="absolute top-3 left-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[0xPRIZE_VAULT]</div>
           <div className="absolute top-3 right-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[INR_CURRENCY]</div>
           <div className="absolute bottom-3 left-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[STATUS: COMMITTED]</div>
-          <div className="absolute bottom-3 right-3 hidden min-[380px]:block font-mono text-[9px] sm:text-xs text-[#aab1a2]">[RVITM x VOICE AI SPACE]</div>
->>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
+          <div className="absolute bottom-3 right-3 font-mono text-[9px] sm:text-xs text-[#aab1a2]">[RVITM]</div>
 
           <div className="relative z-10 max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center justify-center p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[8px] mb-2">

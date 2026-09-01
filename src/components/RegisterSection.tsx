@@ -67,11 +67,23 @@ export function RegisterSection() {
               </p>
             </div>
 
-            {/* Criteria badges */}
-            <div className="flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-[11px] text-[#aab1a2] pt-1 border-t border-[rgba(247,248,239,0.08)] w-full">
+            {/* Criteria badges & Venue info */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] text-[#aab1a2] pt-2 border-t border-[rgba(247,248,239,0.08)] w-full">
               <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> Team: 2–4 Participants</div>
-              <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> No Registration Fee</div>
-              <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> Hardware / Software Tracks</div>
+              <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> Round 1 Fee: <strong className="text-[#f7f8ef]">₹200</strong></div>
+              <div className="flex items-center gap-1.5"><span className="text-[#c7f85a]">&bull;</span> Round 2 Fee: <strong className="text-[#f7f8ef]">₹600</strong> (Additional for Shortlisted Teams)</div>
+            </div>
+
+            <div className="flex items-center gap-2 font-mono text-[11px] text-[#c8cfbd] bg-[#181b14] border border-[rgba(247,248,239,0.13)] px-3 py-2 rounded-[6px] w-full">
+              <span className="text-[#c7f85a] font-bold">[ROUND 2 VENUE]</span>
+              <a
+                href="https://share.google/9h9nFLWiZuUwD1DwN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c7f85a] underline hover:text-[#f7f8ef] transition-colors"
+              >
+                RVITM JP NAGAR 8th Phase, Bengaluru-560068 ↗
+              </a>
             </div>
 
             {/* CTA */}
@@ -79,7 +91,7 @@ export function RegisterSection() {
               to="/register"
               className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-sm sm:text-base tracking-wider flex items-center justify-center gap-2"
             >
-              <span>[REGISTER NOW]</span>
+              <span>[REGISTER NOW — ₹200 / TEAM]</span>
               <ArrowUpRight size={20} />
             </Link>
           </div>

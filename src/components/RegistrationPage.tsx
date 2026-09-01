@@ -406,6 +406,14 @@ export function RegistrationPage() {
             Complete all required fields (<span className="text-[#ff6f4e]">*</span>) for each participant.
             Teams must have <span className="text-[#c7f85a] font-bold">2–4 members</span>.
           </p>
+          <div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-[11px]">
+            <span className="px-2.5 py-1 rounded-[4px] bg-[#141a0d] border border-[rgba(199,248,90,0.3)] text-[#c7f85a] font-bold">
+              Round 1 Fee: ₹200 / Team
+            </span>
+            <span className="px-2.5 py-1 rounded-[4px] bg-[#181b14] border border-[rgba(247,248,239,0.13)] text-[#c8cfbd]">
+              Round 2 (Offline Shortlist): ₹600 (Additional)
+            </span>
+          </div>
         </motion.div>
 
         {/* Payment confirmation state */}
@@ -430,12 +438,10 @@ export function RegistrationPage() {
             {/* Body */}
             <div className="space-y-2 text-center">
               <p className="text-xs text-[#c8cfbd] leading-relaxed">
-                Your registration has been recorded. Complete the payment
-                to finalize your spot.
+                Your team registration has been recorded in our system. Complete the <strong className="text-[#c7f85a]">₹200 Round 1 Registration Fee</strong> to finalize your spot.
               </p>
-              <p className="font-mono text-[10px] text-[#4a5040]">
-                // You will be redirected to an external portal — your data is
-                already saved //
+              <p className="font-mono text-[11px] text-[#aab1a2]">
+                // Round 2 fee of ₹600 is only applicable if your team is shortlisted for the 36-hour offline sprint at RVITM JP Nagar 8th Phase //
               </p>
             </div>
 
@@ -446,7 +452,7 @@ export function RegistrationPage() {
               rel="noopener noreferrer"
               className="btn-primary w-full py-4 text-sm tracking-wider flex items-center justify-center gap-2"
             >
-              <span>PROCEED TO PAYMENT</span>
+              <span>PROCEED TO PAYMENT (₹200)</span>
               <ExternalLink size={15} />
             </a>
 
@@ -544,7 +550,7 @@ export function RegistrationPage() {
                 disabled={isSubmitting}
                 className="w-full btn-primary py-4 text-sm tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>{isSubmitting ? "[SUBMITTING...]" : "[SUBMIT REGISTRATION]"}</span>
+                <span>{isSubmitting ? "[SUBMITTING...]" : "[SUBMIT REGISTRATION & PROCEED TO ₹200 PAYMENT]"}</span>
               </button>
               {submitError && (
                 <p className="font-mono text-[11px] text-[#ff6f4e] mt-3 text-center">

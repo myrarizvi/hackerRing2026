@@ -22,21 +22,21 @@ const MILESTONES: Milestone[] = [
     milestone: "Hackathon Round 1",
     date: "30th September",
     status: "upcoming",
-    description: "Online Shortlisting Round. Evaluation of  tech architectures.",
+    description: "Online Shortlisting Round (Fee: ₹200). Evaluation of tech architectures.",
   },
   {
     id: "04",
     milestone: "Round 1 Results",
     date: "1st October",
     status: "upcoming",
-    description: "Shortlisted teams announced for offline 36-hour sprint.",
+    description: "Shortlisted teams announced for offline 36-hour sprint (Fee: ₹600 additional).",
   },
   {
     id: "05",
     milestone: "Round 2 (Offline)",
     date: "8th October",
     status: "upcoming",
-    description: "36-Hour Offline sprint at RVITM campus.",
+    description: "36-Hour Offline sprint at RVITM JP Nagar 8th Phase.",
   },
 ];
 

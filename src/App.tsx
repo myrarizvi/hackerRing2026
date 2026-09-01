@@ -71,7 +71,7 @@ export default function App() {
                 >
                   <span className="min-w-0 text-left leading-tight">
                     <span className="block whitespace-nowrap text-[11px] tracking-wider">REGISTRATION OPEN</span>
-                    <span className="mt-0.5 block whitespace-nowrap text-[9px] font-semibold opacity-70">2–4 MEMBERS · NO FEE</span>
+                    <span className="mt-0.5 block whitespace-nowrap text-[9px] font-semibold opacity-80">2–4 MEMBERS · ₹200 (R1) · ₹600 (R2)</span>
                   </span>
                   <span className="flex flex-shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-bold tracking-wide">
                     JOIN NOW <ArrowUpRight size={15} />

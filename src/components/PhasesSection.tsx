@@ -8,6 +8,8 @@ export function PhasesSection() {
       name: "Online Shortlisting Round",
       mode: "VIRTUAL / REMOTE",
       duration: "Concept & Prototype Evaluation",
+      fee: "₹200 / Team",
+      feeNote: "Registration Fee",
       description:
         "Kickstart your HackeRing journey with an engaging first round designed to explore your ideas, creativity, and technical understanding. The format may vary depending on your chosen track, with participants taking on a short assessment, sharing their ideas, or responding to questions related to their chosen domain.",
       deliverables: [
@@ -22,6 +24,10 @@ export function PhasesSection() {
       name: "36 Hour Offline Sprint",
       mode: "IN-PERSON HACKATHON",
       duration: "Continuous 36 Hours Marathon",
+      fee: "₹600 / Team",
+      feeNote: "Additional Fee (Only for Shortlisted Teams)",
+      location: "RVITM JP NAGAR 8th Phase",
+      locationUrl: "https://share.google/9h9nFLWiZuUwD1DwN",
       description:
         "Shortlisted teams assemble at the RVITM Campus for an uninterrupted 36-hour physical build marathon with hardware benches, live testing rigs, and on-site industry mentorship.",
       deliverables: [
@@ -81,19 +87,48 @@ export function PhasesSection() {
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-[#aab1a2] pb-3 mb-4 border-b border-[rgba(247,248,239,0.13)]">
                     <span className="text-[#c7f85a] font-bold">{phase.round}</span>
-                    <span className="px-2.5 py-0.5 border border-[rgba(247,248,239,0.13)] bg-[#181b14] text-[10px] text-[#c8cfbd] font-mono rounded-[4px]">
-                      {phase.mode}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 border border-[rgba(199,248,90,0.3)] bg-[#141a0d] text-[10px] text-[#c7f85a] font-mono font-bold rounded-[4px]">
+                        FEE: {phase.fee}
+                      </span>
+                      <span className="px-2.5 py-0.5 border border-[rgba(247,248,239,0.13)] bg-[#181b14] text-[10px] text-[#c8cfbd] font-mono rounded-[4px]">
+                        {phase.mode}
+                      </span>
+                    </div>
                   </div>
 
                   <div className="flex items-start gap-3 mb-3">
                     <div className="flex-shrink-0 p-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px]">
                       <Icon size={22} className={accentColor} />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
-                      {phase.name}
-                    </h3>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
+                        {phase.name}
+                      </h3>
+                      <p className="text-[11px] font-mono text-[#aab1a2] mt-0.5">
+                        // {phase.feeNote} //
+                      </p>
+                    </div>
                   </div>
+
+                  {phase.location && (
+                    <div className="my-3 p-3 bg-[#181b14] border border-[rgba(199,248,90,0.25)] rounded-[6px] flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 font-mono text-xs text-[#f7f8ef]">
+                        <MapPin size={15} className="text-[#c7f85a] flex-shrink-0" />
+                        <span className="font-semibold">{phase.location}</span>
+                      </div>
+                      {phase.locationUrl && (
+                        <a
+                          href={phase.locationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 font-mono text-[11px] text-[#c7f85a] hover:underline font-bold"
+                        >
+                          [VIEW ON MAP ↗]
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] leading-relaxed my-4">
                     {phase.description}

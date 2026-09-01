@@ -63,7 +63,15 @@ export function TimingSection() {
               </div>
 
               <p className="font-mono text-xs sm:text-sm text-[#c8cfbd] max-w-lg leading-relaxed">
-                A high-energy 36-hour build where ideas turn into working prototypes at the RVITM Campus.
+                A high-energy 36-hour physical build where ideas turn into working prototypes at the{" "}
+                <a
+                  href="https://share.google/9h9nFLWiZuUwD1DwN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#c7f85a] underline hover:text-[#f7f8ef] font-semibold transition-colors inline-block"
+                >
+                  RVITM JP Nagar 8th Phase Campus, Bengaluru ↗
+                </a>.
               </p>
             </div>
 

@@ -76,12 +76,7 @@ export function TracksSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                whileHover={{ y: -4 }}
-<<<<<<< HEAD
-                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-5 sm:p-6 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
-=======
-                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 min-[380px]:p-5 sm:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
->>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
+                className="relative border border-[rgba(247,248,239,0.13)] bg-[#12140f] p-4 min-[380px]:p-5 sm:p-6 lg:p-8 rounded-[8px] flex flex-col justify-between group hover:bg-[#181b14] hover:border-[rgba(247,248,239,0.26)] transition-all duration-200"
               >
                 {/* Visual Corner Brackets */}
                 <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[rgba(247,248,239,0.26)] rounded-tl-[7px]" />
@@ -101,13 +96,8 @@ export function TracksSection() {
                     <div className="flex-shrink-0 p-2.5 sm:p-3 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[6px] group-hover:border-[rgba(247,248,239,0.26)] transition-colors">
                       <Icon size={28} className={accentColor} />
                     </div>
-<<<<<<< HEAD
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-black font-display text-[#f7f8ef] tracking-tight">
-=======
                     <div className="min-w-0">
-                      <h3 className="text-2xl sm:text-3xl font-black font-display text-[#f7f8ef] tracking-tight">
->>>>>>> 816e081 (feat: enhance mobile responsiveness, add Vite environment support, and improve navigation accessibility.)
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black font-display text-[#f7f8ef] tracking-tight">
                         {track.title}
                       </h3>
                       <p className="font-mono text-xs text-[#aab1a2] mt-1">

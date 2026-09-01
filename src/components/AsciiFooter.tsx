@@ -94,17 +94,28 @@ export function AsciiFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-[rgba(247,248,239,0.13)] text-[#c8cfbd]">
           <div>
             <div className="text-[#f7f8ef] font-bold mb-2">[Hacker-Ring 2.0]</div>
-            <p className="text-[#aab1a2] text-[11px] leading-relaxed">
+            <p className="text-[#aab1a2] text-[11px] leading-relaxed mb-2">
               Organized by RV Institute of Technology and Management.
+            </p>
+            <p className="text-[11px]">
+              <span className="text-[#aab1a2]">Offline Venue: </span>
+              <a
+                href="https://share.google/9h9nFLWiZuUwD1DwN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c7f85a] underline hover:text-[#f7f8ef] transition-colors"
+              >
+                RVITM JP Nagar 8th Phase ↗
+              </a>
             </p>
           </div>
 
           <div>
             <div className="text-[#f7f8ef] font-bold mb-2">[KEY DIRECTIVES]</div>
             <ul className="text-[#aab1a2] text-[11px] space-y-1">
-              <li>&gt; Registration Window: 17 Aug - 17 Sep</li>
-              <li>&gt; Round 1 (Online): 19th Sep</li>
-              <li>&gt; Round 2 (Offline Sprint): 25th Sep</li>
+              <li>&gt; Registration Window: 1 Sep - 28 Sep</li>
+              <li>&gt; Round 1 (Online): 30th Sep · Fee ₹200</li>
+              <li>&gt; Round 2 (Offline Sprint): 8th Oct · Fee ₹600</li>
             </ul>
           </div>
 
