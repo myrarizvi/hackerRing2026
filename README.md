@@ -6,7 +6,7 @@ A highly interactive, terminal/hacker-themed landing page for Hacker-Ring 2.0. B
 
 - **Terminal/Hacker Aesthetic**: A cohesive, professional dark mode design with monospace typography and strict grid alignments.
 - **Dynamic Animations**: Includes typewriter effects, staggered decode-in reveal effects, and a binary matrix-style drift background.
-- **Audio Waveform Visualizations**: Continuous, live-bouncing audio waveform animations with peak glows to emphasize the Voice AI theme.
+- **Audio Waveform Visualizations**: Continuous, live-bouncing audio waveform animations with peak glows to emphasize the  AI theme.
 - **Interactive UI**: Features cursor-reactive dot patterns, hover state bracket indicators, and SVG border tracing animations on UI cards.
 - **CRT Flicker Overlays**: Subtle scanline CRT raster textures create a retro, immersive terminal experience.
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile, with a dedicated sticky quick-register action bar for mobile users.
