@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { ArrowUp, Terminal, Shield, Sparkles, Building2 } from "lucide-react";
+import { ArrowUp, Terminal, Shield, Sparkles } from "lucide-react";
+import agnaiIcon from "../assets/logos/agnai-icon.webp";
+import agnaiWordmark from "../assets/logos/agnai-wordmark.webp";
+import codechefLogo from "../assets/logos/codechef-logo.webp";
 
 export function AsciiFooter() {
   const [flicker, setFlicker] = useState(false);
@@ -23,45 +26,43 @@ export function AsciiFooter() {
 ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║      ██║  ██║██║██║ ╚████║╚██████╔╝    ███████╗██╗╚██████╔╝
 ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝╚═╝ ╚═════╝ `;
 
-  const sponsors = [
-    { name: "RESERVED_SPONSOR_01", type: "TITLE SPONSOR" },
-    { name: "RESERVED_SPONSOR_02", type: "TRACK PARTNER" },
-    { name: "RESERVED_SPONSOR_03", type: "HARDWARE LABS" },
-    { name: "RESERVED_SPONSOR_04", type: "CLOUD PLATFORM" },
-    { name: "RESERVED_SPONSOR_05", type: "COMMUNITY PARTNER" },
-  ];
+
 
   return (
     <footer className="relative pt-10 sm:pt-16 pb-28 sm:pb-12 overflow-hidden font-mono text-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        {/* Sponsors Placeholder Strip */}
+        {/* Sponsors Strip */}
         <div className="mb-8 sm:mb-16 pb-6 sm:pb-12 border-b border-[rgba(247,248,239,0.13)]">
-          <div className="flex flex-col min-[430px]:flex-row min-[430px]:items-center justify-between gap-2 font-mono text-xs text-[#aab1a2] pb-3 mb-6 border-b border-[rgba(247,248,239,0.13)]">
-            <span className="text-[#c7f85a] font-bold">// OUR SPONSORS & PARTNERS //</span>
-            <span className="text-[#c8cfbd]">[SLOTS_OPEN_FOR_RESERVATION]</span>
+          <div className="font-mono text-xs text-[#aab1a2] pb-3 mb-6 border-b border-[rgba(247,248,239,0.13)]">
+            <span className="text-[#c7f85a] font-bold">// OUR SPONSORS &amp; PARTNERS //</span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {sponsors.map((sp, idx) => (
-              <div
-                key={idx}
-                className="border border-dashed border-[rgba(247,248,239,0.13)] bg-[#12140f]/60 p-4 min-h-24 rounded-[6px] flex flex-col items-center justify-center text-center group hover:border-[rgba(247,248,239,0.26)] hover:bg-[#181b14] transition-all duration-200"
-              >
-                <div className="w-8 h-8 mb-2 border border-[rgba(247,248,239,0.13)] bg-[#181b14] rounded-[4px] flex items-center justify-center text-[#aab1a2] group-hover:text-[#c7f85a] transition-colors">
-                  <Building2 size={16} />
-                </div>
-                <div className="text-[10px] text-[#c8cfbd] font-bold group-hover:text-[#f7f8ef]">
-                  {sp.name}
-                </div>
-                <div className="text-[9px] text-[#aab1a2] mt-0.5">
-                  [{sp.type}]
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* AgnAI Card */}
+            <div className="border border-dashed border-[rgba(247,248,239,0.13)] bg-[#12140f]/60 p-6 min-h-28 rounded-[6px] flex items-center justify-center group hover:border-[rgba(247,248,239,0.26)] hover:bg-[#181b14] transition-all duration-200">
+              <div className="flex items-center gap-4">
+                <img
+                  src={agnaiIcon}
+                  alt="AgnAI icon"
+                  className="w-14 h-14 object-contain flex-shrink-0"
+                />
+                <img
+                  src={agnaiWordmark}
+                  alt="AgnAI"
+                  className="h-10 max-w-[140px] object-contain"
+                />
               </div>
-            ))}
-          </div>
-          <div className="text-[10px] text-[#aab1a2] text-center mt-3">
-            // Sponsor logos & partner tier allocations are finalized in rolling batches //
+            </div>
+
+            {/* CodeChef Card */}
+            <div className="border border-dashed border-[rgba(247,248,239,0.13)] bg-[#12140f]/60 p-6 min-h-28 rounded-[6px] flex items-center justify-center group hover:border-[rgba(247,248,239,0.26)] hover:bg-[#181b14] transition-all duration-200">
+              <img
+                src={codechefLogo}
+                alt="CodeChef"
+                className="h-14 max-w-[200px] object-contain"
+              />
+            </div>
           </div>
         </div>
 

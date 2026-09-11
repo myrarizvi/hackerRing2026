@@ -8,6 +8,7 @@ import { PrizeSection } from "@/components/PrizeSection";
 import { TracksSection } from "@/components/TracksSection";
 import { PhasesSection } from "@/components/PhasesSection";
 import { TimingSection } from "@/components/TimingSection";
+import { AccessRoutesSection } from "@/components/AccessRoutesSection";
 import { RegisterSection } from "@/components/RegisterSection";
 import { SupportSection } from "@/components/SupportSection";
 import { AsciiFooter } from "@/components/AsciiFooter";
@@ -55,6 +56,7 @@ export default function App() {
                 <PhasesSection />
                 <TimingSection />
                 <RegisterSection />
+                <AccessRoutesSection />
                 <SupportSection />
               </main>
 

@@ -51,6 +51,7 @@ export function Navbar() {
     { label: "TRACKS", id: "tracks" },
     { label: "PHASES", id: "phases" },
     { label: "TIMING", id: "timing" },
+    { label: "LOCATION", id: "access-routes" },
     { label: "CONTACT", id: "contact" },
   ];
 
