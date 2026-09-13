@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
 import { PAYMENT_URL } from "../constants";
 import { ArrowLeft, Plus, Trash2, Upload, User, Terminal, ExternalLink } from "lucide-react";
 
@@ -319,48 +318,37 @@ export function RegistrationPage() {
     setSubmitError(null);
 
     try {
-      // 1. Generate team ID client-side to avoid needing SELECT permission after INSERT
-      const teamId = crypto.randomUUID();
+      const formData = new FormData();
+      formData.append("teamName", teamName.trim());
+      formData.append("collegeName", collegeName.trim());
 
-      // 2. Insert the team
-      const { error: teamError } = await supabase
-        .from("teams")
-        .insert({ id: teamId, team_name: teamName, college_name: collegeName });
+      const participantsPayload = participants.map((p) => ({
+        id: p.id,
+        name: p.name.trim(),
+        phone: p.phone.trim(),
+        email: p.email.trim(),
+        github: p.github.trim(),
+        linkedin: p.linkedin.trim(),
+        hasResume: !!p.resume,
+      }));
 
-      if (teamError) throw new Error(`Team creation failed: ${teamError.message}`);
+      formData.append("participants", JSON.stringify(participantsPayload));
 
-      // 2. Insert each participant, uploading resume first if present
-      for (const p of participants) {
-        let resumeUrl: string | null = null;
-
+      participants.forEach((p) => {
         if (p.resume) {
-          const fileExt = p.resume.name.split(".").pop();
-          const filePath = `${teamId}/${p.name.replace(/\s+/g, "_")}_${Date.now()}.${fileExt}`;
-
-          const { error: uploadError } = await supabase.storage
-            .from("resumes")
-            .upload(filePath, p.resume);
-
-          if (uploadError) throw new Error(`Resume upload failed for ${p.name}: ${uploadError.message}`);
-
-          const { data: publicUrlData } = supabase.storage
-            .from("resumes")
-            .getPublicUrl(filePath);
-
-          resumeUrl = publicUrlData.publicUrl;
+          formData.append(`resume_${p.id}`, p.resume);
         }
+      });
 
-        const { error: participantError } = await supabase.from("participants").insert({
-          team_id: teamId,
-          name: p.name,
-          phone: p.phone,
-          email: p.email,
-          github: p.github,
-          linkedin: p.linkedin,
-          resume_url: resumeUrl,
-        });
+      const response = await fetch("/api/register", {
+        method: "POST",
+        body: formData,
+      });
 
-        if (participantError) throw new Error(`Participant insert failed for ${p.name}: ${participantError.message}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error || `Registration failed (${response.status})`);
       }
 
       setSubmitted(true);
