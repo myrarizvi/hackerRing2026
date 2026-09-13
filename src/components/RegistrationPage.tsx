@@ -319,16 +319,15 @@ export function RegistrationPage() {
     setSubmitError(null);
 
     try {
-      // 1. Insert the team
-      const { data: teamData, error: teamError } = await supabase
+      // 1. Generate team ID client-side to avoid needing SELECT permission after INSERT
+      const teamId = crypto.randomUUID();
+
+      // 2. Insert the team
+      const { error: teamError } = await supabase
         .from("teams")
-        .insert({ team_name: teamName, college_name: collegeName })
-        .select()
-        .single();
+        .insert({ id: teamId, team_name: teamName, college_name: collegeName });
 
       if (teamError) throw new Error(`Team creation failed: ${teamError.message}`);
-
-      const teamId = teamData.id;
 
       // 2. Insert each participant, uploading resume first if present
       for (const p of participants) {
