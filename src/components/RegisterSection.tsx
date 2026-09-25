@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
+import { REGISTRATIONS_OPEN } from "@/config";
 
 export function RegisterSection() {
   return (
@@ -33,7 +34,7 @@ export function RegisterSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c7f85a] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c7f85a]"></span>
             </span>
-            <span>[REGISTRATION_OPEN]</span>
+            <span>{REGISTRATIONS_OPEN ? "[REGISTRATION_OPEN]" : "Registrations Closed — thank you for the amazing response! 🎉"}</span>
           </div>
         </div>
 
@@ -87,13 +88,17 @@ export function RegisterSection() {
             </div>
 
             {/* CTA */}
-            <Link
+            {REGISTRATIONS_OPEN ? <Link
               to="/register"
               className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-sm sm:text-base tracking-wider flex items-center justify-center gap-2"
             >
               <span>[REGISTER NOW — ₹200 / TEAM]</span>
               <ArrowUpRight size={20} />
-            </Link>
+            </Link> : (
+              <div className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-sm sm:text-base tracking-wider flex items-center justify-center gap-2">
+                Registrations Closed — thank you for the amazing response! 🎉
+              </div>
+            )}
           </div>
         </motion.div>
 

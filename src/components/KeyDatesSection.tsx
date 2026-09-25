@@ -13,7 +13,7 @@ const MILESTONES: Milestone[] = [
   {
     id: "02",
     milestone: "Registration Closes",
-    date: "28th September",
+    date: "25th September",
     status: "active",
     description: "Final deadline for proposal & team verification.",
   },

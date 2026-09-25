@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X, Radio } from "lucide-react";
+import { Menu, X, Radio } from "lucide-react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -99,16 +99,6 @@ export function Navbar() {
               <span className="text-[11px]">{currentTime || "SYS_READY"}</span>
             </div>
 
-            <div className="hidden sm:block">
-              <Link
-                to="/register"
-                className="btn-primary px-3.5 py-1 text-xs tracking-wider flex items-center gap-1.5"
-              >
-                <span>REGISTER NOW</span>
-                <ArrowUpRight size={14} />
-              </Link>
-            </div>
-
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -140,14 +130,6 @@ export function Navbar() {
                 &gt; {link.label}
               </button>
             ))}
-            <Link
-              to="/register"
-              onClick={() => setMobileMenuOpen(false)}
-              className="btn-primary w-full min-h-11 px-4 text-xs tracking-wider flex items-center justify-between"
-            >
-              <span>REGISTER YOUR TEAM</span>
-              <ArrowUpRight size={15} />
-            </Link>
             <div className="pt-3 text-[11px] text-[#aab1a2] flex items-center justify-between">
               <span>SYS STATUS: <span className="text-[#0f8c7f] font-bold">ONLINE</span></span>
               <span>PRIZE: <span className="text-[#c7f85a] font-bold">₹1,00,000</span></span>

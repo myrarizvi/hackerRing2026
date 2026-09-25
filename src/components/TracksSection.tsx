@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Cpu, Radio, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { REGISTRATIONS_OPEN } from "@/config";
 
 export function TracksSection() {
   const tracks = [
@@ -130,7 +131,11 @@ export function TracksSection() {
                 {/* Bottom Spec Footer */}
                 <div className="mt-6 pt-4 border-t border-[rgba(247,248,239,0.08)] flex flex-col min-[430px]:flex-row min-[430px]:items-center justify-between gap-2 font-mono text-[11px] text-[#aab1a2]">
                   <span>ELIGIBILITY: OPEN TO ALL</span>
-                  <Link to="/register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</Link>
+                  {REGISTRATIONS_OPEN ? (
+                    <Link to="/register" className="text-[#c7f85a] font-bold hover:underline">&gt; REGISTER THIS TRACK</Link>
+                  ) : (
+                    <span className="text-[#c7f85a] font-bold hover:underline">Registrations Closed — thank you for the amazing response! 🎉</span>
+                  )}
                 </div>
               </motion.div>
             );
