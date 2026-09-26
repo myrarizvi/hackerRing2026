@@ -1,6 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
-import { REGISTRATIONS_OPEN } from "../src/config";
 
 // Load environment variables strictly on the server
 dotenv.config({ path: ".env.local" });
@@ -121,13 +120,6 @@ interface ParticipantInput {
 
 // ── Core API Handler ─────────────────────────────────────────────────────────
 export async function handleRegisterRequest(request: Request): Promise<Response> {
-  if (!REGISTRATIONS_OPEN) {
-    return new Response(JSON.stringify({ error: "Registrations are closed" }), {
-      status: 403,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
   // 1. Handle CORS Preflight
   if (request.method === "OPTIONS") {
     const origin = request.headers.get("origin") || "";

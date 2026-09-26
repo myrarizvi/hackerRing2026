@@ -15,7 +15,6 @@ import { AsciiFooter } from "@/components/AsciiFooter";
 import { NotFoundPage } from "@/components/NotFoundPage";
 import { RegistrationPage } from "@/components/RegistrationPage";
 import { ArrowUpRight } from "lucide-react";
-import { REGISTRATIONS_OPEN } from "@/config";
 
 export default function App() {
   return (
@@ -68,7 +67,7 @@ export default function App() {
 
               {/* Mobile Sticky Quick Register Action Bar */}
               <div className="mobile-sticky-register sm:hidden fixed bottom-0 left-0 right-0 z-40 px-3 pt-2 bg-gradient-to-t from-[#050604] via-[#050604]/95 to-transparent">
-                {REGISTRATIONS_OPEN ? <Link
+                <Link
                   to="/register"
                   className="w-full btn-primary min-h-[54px] px-4 font-mono font-bold flex max-[359px]:flex-col max-[359px]:items-stretch items-center justify-between gap-3 max-[359px]:gap-1.5 shadow-2xl active:scale-[0.98]"
                 >
@@ -79,11 +78,7 @@ export default function App() {
                   <span className="flex flex-shrink-0 items-center gap-1 whitespace-nowrap text-[11px] font-bold tracking-wide max-[359px]:self-end">
                     JOIN NOW <ArrowUpRight size={15} />
                   </span>
-                </Link> : (
-                  <div className="w-full btn-primary min-h-[54px] px-4 font-mono font-bold flex max-[359px]:flex-col max-[359px]:items-stretch items-center justify-between gap-3 max-[359px]:gap-1.5 shadow-2xl active:scale-[0.98]">
-                    Registrations Closed — thank you for the amazing response! 🎉
-                  </div>
-                )}
+                </Link>
               </div>
             </>
           }
