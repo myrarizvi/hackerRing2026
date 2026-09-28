@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { PAYMENT_URL } from "../constants";
 import { ArrowLeft, Plus, Trash2, Upload, User, Terminal, ExternalLink } from "lucide-react";
+import { REGISTRATIONS_OPEN } from "@/config";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -312,6 +313,7 @@ export function RegistrationPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    if (!REGISTRATIONS_OPEN) return;
     e.preventDefault();
     if (!validate()) return;
 
@@ -372,6 +374,10 @@ export function RegistrationPage() {
   };
 
   // ── Render ──
+
+  if (!REGISTRATIONS_OPEN) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div className="relative z-20 min-h-screen pt-20 pb-20 px-3 min-[360px]:px-4 sm:px-6 font-mono">

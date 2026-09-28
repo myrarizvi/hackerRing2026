@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { REGISTRATIONS_OPEN } from "@/config";
 
 const GLITCH_CHARS = "█▓▒░#$/@%&*+=~<>[]01";
 
@@ -202,13 +203,17 @@ export function HeroSection() {
 
           {/* Action Buttons Section */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto px-2">
-            <Link
+            {REGISTRATIONS_OPEN ? <Link
               to="/register"
               className="w-full sm:w-auto btn-primary px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2.5 group"
             >
               <span>ACCESS REGISTRATION</span>
               <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </Link> : (
+              <div className="w-full sm:w-auto btn-primary px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2.5 group">
+                Registrations Closed — thank you for the amazing response! 🎉
+              </div>
+            )}
             <a
               href="#dates"
               className="w-full sm:w-auto btn-secondary px-5 py-3 sm:py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2 group"
